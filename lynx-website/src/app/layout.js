@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
       
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         
-        <Header title={metadata.title} />
+        <Header /> 
         {children}
         <Footer />
       
