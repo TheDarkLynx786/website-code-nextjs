@@ -1,0 +1,15 @@
+.div {
+    border-radius: 10px;
+    background-color: rgb(100, 39, 39);
+    display: grid;
+    margin: auto;
+    height: auto;
+    width: 50%;
+    justify-content: center;
+    padding: 10px;
+}
+
+.page {
+    height: auto;
+    background-color: #494646;
+}

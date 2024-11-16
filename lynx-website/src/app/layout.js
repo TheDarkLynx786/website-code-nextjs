@@ -1,7 +1,8 @@
 import localFont from "next/font/local";
 import "./globals.css";
-import Footer from "@/components/footer";
-import Header from "@/components/header";
+import Footer from "@/app/_components/footer";
+import Header from "@/app/_components/header";
+import Sidebar from "@/app/_components/sidebar";
 
 
 const geistSans = localFont({
@@ -17,7 +18,7 @@ const geistMono = localFont({
 
 export const metadata = {
   title: "Murtaza Haque's Website",
-  description: "My personal website!",
+  description: "My Personal Website!",
 };
 
 export default function RootLayout({ children }) {
@@ -26,7 +27,8 @@ export default function RootLayout({ children }) {
       
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         
-        <Header /> 
+        <Header />
+        <Sidebar />
         {children}
         <Footer />
       
