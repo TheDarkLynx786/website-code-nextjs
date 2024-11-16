@@ -6,6 +6,8 @@
   --button-primary-hover: #383838;
   --button-secondary-hover: #f2f2f2;
 
+  width: auto;
+  margin-left: 250px;
   display: grid;
   grid-template-rows: 20px 1fr 20px;
   align-items: center;
