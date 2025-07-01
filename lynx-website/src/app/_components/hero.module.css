@@ -1,0 +1,28 @@
+.heroContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    background-color: #f0f0f0;
+}
+
+.heroCard {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    align-items: center;
+    justify-content: center;
+    height: 25vh;
+    text-align: center;
+}
+
+.heroText {
+    font-size: 1.5rem;
+    color: #000000;
+    text-align: center;
+}

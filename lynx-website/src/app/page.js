@@ -1,9 +1,11 @@
 import styles from "./page.module.css";
+import Hero from "@/app/_components/hero";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <h1>There is a house in New Orleans</h1>
-    </div>
+    <>
+      <Hero />
+      <div className={styles.page}/>
+    </> 
   );
 }

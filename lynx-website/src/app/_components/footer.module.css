@@ -1,18 +1,28 @@
 .div {
     border-radius: 10px;
-    background-color: rgb(100, 39, 39);
+    background-color: #f0f0f0;
     display: grid;
     margin: auto;
     height: auto;
     width: 50%;
     justify-content: center;
     padding: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #000;
+    
 }
 
-.page {
-    height: auto;
-    width: auto;
-    margin-left: 250px;
+.divText {
+    font-size: 1.5rem;
+    color: #000000;
+    text-align: center;
+}
 
-    background-color: #494646;
+.footer {
+    grid-row-start: 3;
+    display: flex;
+    gap: 24px;
+
+    background-color: #bcb9b9;
 }
