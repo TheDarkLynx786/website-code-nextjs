@@ -9,6 +9,7 @@
 
 .heroButton {
     background-color: #4CAF50;
+    box-shadow: #000000 0px 1px 1px;;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -16,9 +17,13 @@
     text-decoration: wavy;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin: 4px 72px;
     cursor: pointer;
     border-radius: 12px;
+}
+
+.heroButton:hover {
+    box-shadow: #000000 0px 0px 0px;
 }
 
 .heroText {
