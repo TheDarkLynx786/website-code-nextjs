@@ -108,6 +108,10 @@
         gap: 0px;
     }
 
+    .headerFixed.visible {
+        display: none;
+    }
+
     .headerFixed {
         display: grid;
         gap: 0px;

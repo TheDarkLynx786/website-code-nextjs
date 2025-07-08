@@ -29,8 +29,8 @@ export default function Header() {
 
     //84 Scroll Pos
 
-        return(
-            <>
+    return(
+        <>
             <header className={styles.header}>
                 <div className={styles.div}>
                     <Link href="/">
@@ -79,8 +79,8 @@ export default function Header() {
                     <Link href='/about' className={styles.divText}>About</Link>
                     <Link href='/' className={styles.divText}> Contact </Link>
                 </nav>
-                
+
             </header>
-            </>
-        );
+        </>
+    );
 }
