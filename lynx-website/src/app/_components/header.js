@@ -10,7 +10,9 @@ export default function Header() {
     
     useEffect(() => {
         const handleScroll = () => {
-            const triggerOffset = 300; // Show fixed header after scrolling this many px
+
+            
+            const triggerOffset = 200; // Show fixed header after scrolling this many px
             setScrollPos(window.scrollY > triggerOffset);
         };
 
@@ -40,6 +42,7 @@ export default function Header() {
             </nav>
         </header>
 
+        
         <header className={`${styles.headerFixed} ${scrollPos ? styles.visible : ""}`}>
             <Link href="/">
                 <Image
@@ -57,6 +60,7 @@ export default function Header() {
                 <Link href='/' className={styles.divText}> Contact </Link>
             </nav>
         </header>
+        
         </>
     );
 }
