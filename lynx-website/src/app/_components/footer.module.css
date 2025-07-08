@@ -22,18 +22,27 @@
 
 .socialIcon {
     width: 50px;
+    fill: #2e2828;
+    
     height: 50px;
     padding: 5px;
     border-radius: 10px;
-    border: 2px solid #2e2828;
+    border: 2px solid;
     margin: 15px;
-    transition: transform 0.1s ease-in-out;
+    
+    transform: scale(1,1);
+    background-color: #bcb9b9;
+    border-color: black;
+    filter: invert(0%);
+    transition: filter 0.15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+
 }
 
 .socialIcon:hover {
-    transform: scale(1.1, 1.1);
-    transition: transform 0.1s ease-in-out;
-    filter: invert(1);
+    background-color: white;
+    border-color: white;
+    filter: invert(100%);
+    transition: filter 0.15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
 }
 
 .footer {
@@ -42,4 +51,17 @@
     display: grid;
     background-color: #bcb9b9;
     z-index: 1000;
+}
+
+@media (max-width: 450px) {
+    .divText {
+        font-size: 1rem;
+    }
+
+    .socialIcon {
+        width: 40px;
+        height: 40px;
+        padding: 3px;
+        margin: 10px;
+    }
 }
