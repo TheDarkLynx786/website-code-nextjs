@@ -60,7 +60,7 @@
     padding: 5px;
     background-color: #bcb9b9;
     transition: background-color 0.3s ease-in-out;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
 .divText:hover {
@@ -99,8 +99,20 @@
 
 @media (max-width: 450px) {
     .navbar {
+        position: relative;
         display: none;
         flex-direction: column;
+        width: 100%;
+        z-index: 0;
+    }
+
+    .div {
+        position: relative;
+        z-index: 1000;
+    }
+
+    .divText {
+        width: 100%;
     }
 
     .header {
@@ -118,8 +130,11 @@
     }
 
     .navbar.open {
+        position: relative;
         display: flex;
+        border-top: 1px solid #2e2828;
         animation: slideIn 0.3s ease-in-out forwards;
+        z-index: 0;
     }
 
     .navbarButton {
