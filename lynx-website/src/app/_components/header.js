@@ -2,12 +2,19 @@
 
 import styles from "./header.module.css"
 import Link from "next/link";
+import Button from "./button";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Header() {
     const [scrollPos, setScrollPos] = useState(false);
-    
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuOpen((prev) => !prev);
+    };
+
+
     useEffect(() => {
         const handleScroll = () => {
 
@@ -22,45 +29,58 @@ export default function Header() {
 
     //84 Scroll Pos
 
-    return(
-        <>
-        <header className={styles.header}>
-            <Link href="/">
-                <Image
-                    src="/images/ChooChoo.png"
-                    alt="Site Logo"
-                    width={50}
-                    height={50} 
-                    className={styles.logo}
-                />
-            </Link>
+        return(
+            <>
+            <header className={styles.header}>
+                <div className={styles.div}>
+                    <Link href="/">
+                        <Image
+                            src="/images/ChooChoo.png"
+                            alt="Site Logo"
+                            width={50}
+                            height={50} 
+                            className={styles.logo}
+                        />
+                    </Link>
 
-            <nav className={styles.navbar}>
-                <Link href='/' className={styles.divText}> Home </Link>
-                <Link href='/about' className={styles.divText}>About</Link>
-                <Link href='/' className={styles.divText}> Contact </Link>
-            </nav>
-        </header>
+                    
+                    
+                    <Button style={styles.navbarButton} onClick={toggleMenu}>☰</Button>
+                    
+                </div>
+                
+                <nav className={`${styles.navbar} ${menuOpen ? styles.open : ""}`}>
+                    <Link href='/' className={styles.divText}> Home </Link>
+                    <Link href='/about' className={styles.divText}>About</Link>
+                    <Link href='/' className={styles.divText}> Contact </Link>
+                </nav>
 
-        
-        <header className={`${styles.headerFixed} ${scrollPos ? styles.visible : ""}`}>
-            <Link href="/">
-                <Image
-                    src="/images/ChooChoo.png"
-                    alt="Site Logo"
-                    width={50}
-                    height={50} 
-                    className={styles.logo}
-                />
-            </Link>
+            </header>
+            
 
-            <nav className={styles.navbar}>
-                <Link href='/' className={styles.divText}> Home </Link>
-                <Link href='/about' className={styles.divText}>About</Link>
-                <Link href='/' className={styles.divText}> Contact </Link>
-            </nav>
-        </header>
-        
-        </>
-    );
+            <header className={`${styles.headerFixed} ${scrollPos ? styles.visible : ""}`}>
+                
+                <div className={styles.div}>
+                    <Link href="/">
+                        <Image
+                            src="/images/ChooChoo.png"
+                            alt="Site Logo"
+                            width={50}
+                            height={50} 
+                            className={styles.logo}
+                        />
+                    </Link>
+
+                    <Button style={styles.navbarButton} onClick={toggleMenu}>☰</Button>
+                </div>
+
+                <nav className={`${styles.navbar} ${menuOpen ? styles.open : ""}`}>
+                    <Link href='/' className={styles.divText}> Home </Link>
+                    <Link href='/about' className={styles.divText}>About</Link>
+                    <Link href='/' className={styles.divText}> Contact </Link>
+                </nav>
+                
+            </header>
+            </>
+        );
 }

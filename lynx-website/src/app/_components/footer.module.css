@@ -20,9 +20,10 @@
 }
 
 .footer {
+    height: 20vh;
     grid-row-start: 3;
     display: flex;
-    gap: 24px;
-
+    gap: 1rem;
     background-color: #bcb9b9;
+    z-index: 1000;
 }

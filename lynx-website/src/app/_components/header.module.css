@@ -10,6 +10,34 @@
     /* Centering */
 }
 
+.div {
+    display: flex;
+}
+
+.navbarButton {
+    display: none;
+    height: 50%;
+    align-self: center;
+    margin-left: auto;
+    margin-right: 20px;
+    padding: 10px;
+    justify-self: left;
+    font-size: 1.5rem;
+    color: #2e2828;
+    text-align: center;
+    padding: 5px;
+    background-color: #bcb9b9;
+    transition: background-color 0.3s ease-in-out;
+    border-radius: 5px;
+}
+
+.navButton:hover {
+    background-color: #9b9999;
+    transition: background-color 0.3s ease-in-out;
+}
+
+
+
 .logo {
     transform: scale(1,1);
     transition: transform 0.1s ease-in-out;
@@ -31,11 +59,13 @@
     text-align: center;
     padding: 5px;
     background-color: #bcb9b9;
+    transition: background-color 0.3s ease-in-out;
     border-radius: 5px;
 }
 
 .divText:hover {
     background-color: #9b9999;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .headerFixed {
@@ -65,4 +95,39 @@
     gap: 1rem;
     background-color: #bcb9b9;
     z-index: 1000;
+}
+
+@media (max-width: 450px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+    }
+
+    .header {
+        display: grid;
+        gap: 0px;
+    }
+
+    .headerFixed {
+        display: grid;
+        gap: 0px;
+    }
+
+    .navbar.open {
+        display: flex;
+        animation: slideIn 0.3s ease-in-out forwards;
+    }
+
+    .navbarButton {
+        display: block;
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateY(-100%);
+        } 
+        to {
+            transfornm: translateY(0);
+        }
+    }
 }
