@@ -1,4 +1,5 @@
-import { getPostFileNames, getFileNameFromSlug, getPostByFileName } from '@/app/_lib/posts';
+import { getPostFileNames, getFileNameFromSlug, getPostByFileName } from '@/_lib/posts';
+import styles from '@/styles/article.module.css';
 
 let slugToFilenameMap = null;
 
@@ -16,9 +17,17 @@ export default async function PostPage({ params }) {
   const { contentHtml, frontmatter } = await getPostByFileName(filename);
 
   return (
-    <article className="prose">
-      <h1>{frontmatter.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
-    </article>
+    <div className={styles.bgColor}>
+      <article className={styles.articleStyle} >
+        <h1 className={styles.title}>{frontmatter.title}</h1>
+        <h2 className={styles.subtitle}>{frontmatter.subtitle}</h2>
+        <div className={styles.metaInfo}>
+          <h2 className={styles.date}>{frontmatter.date}</h2>
+          <h2 className={styles.readTime}>{frontmatter.readTime} minute read</h2>
+        </div>
+
+        <div className={styles.articleContent} dangerouslySetInnerHTML={{ __html: contentHtml }} />
+      </article>
+    </div>
   );
 }

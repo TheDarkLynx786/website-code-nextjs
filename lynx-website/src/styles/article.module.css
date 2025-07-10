@@ -1,0 +1,70 @@
+.articleStyle {
+    margin: auto;
+    max-width: 85%;
+    display: grid;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    align-items: center;
+    justify-content: left;
+}
+
+.bgColor {
+    background-color: #f2f2f2;
+    padding: 1rem;
+}
+
+.title {
+    font-size: 2rem;
+    color: #000000;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.4rem;
+    color: #000000;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.metaInfo {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.date {
+    font-size: 1.2rem;
+    color: #000000;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.readTime {
+    font-size: 1.2rem;
+    color: #000000;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.articleContent {
+    color: #000;
+    line-height: 1.7;
+    text-align: left;
+}
+
+.articleContent h1 {
+    font-size: 1.4rem;
+    color: #000000;
+    text-align: left;
+}
+
+.articleContent p {
+    font-size: 1rem;
+    color: #000000;
+    text-align: left;
+}

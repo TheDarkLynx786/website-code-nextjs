@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "./header.module.css"
+import styles from "@/styles/header.module.css";
 import Link from "next/link";
 import Button from "./button";
 import Image from "next/image";

@@ -1,4 +1,4 @@
-import styles from './postFeed.module.css'
+import styles from '@/styles/postFeed.module.css'
 import Card from './card';
 
 export default function PostFeed({posts}) {

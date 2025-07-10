@@ -5,7 +5,7 @@ import { remark } from 'remark';
 import html from 'remark-html';
 import { notFound } from 'next/navigation';
 
-const postsDirectory = path.join(process.cwd(), 'src', 'app', '_content', 'articles');
+const postsDirectory = path.join(process.cwd(), 'src', '_content', 'articles');
 
 /* Return array of filenames in /src/app/_contents/articles (w/o .md extension) */
 export function getPostFileNames() {

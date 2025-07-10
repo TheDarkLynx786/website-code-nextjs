@@ -1,5 +1,5 @@
 import styles from "./page.module.css";
-import Hero from "@/app/_components/hero";
+import Hero from "@/_components/hero";
 
 export default function Home() {
   return (
