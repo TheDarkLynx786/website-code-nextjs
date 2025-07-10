@@ -1,8 +1,8 @@
 import styles from "./card.module.css"
 
-export default function Card({children}) {
+export default function Card({children, style}) {
     return(
-        <div className={styles.card}>
+        <div className={style}>
             {children}
         </div>
     );

@@ -5,11 +5,9 @@ import Card from "./card";
 export default function Hero() {
     return(
         <div className={styles.heroContainer}>
-            <Card>
+            <Card style={styles.heroCard}>
                 <h1 className={styles.heroText}>
-                    Hello, fellow net surfer! <br/>
-                    Who might be me, you ask? <br/>
-                    Click here to learn more!
+                    Welcome, Internet Traveler! 
                 </h1>
                 <Button link='/about' style={styles.heroButton} > About Me! </Button>
             </Card>
