@@ -1,13 +1,20 @@
+:root{
+    --article-padding: 30px;
+    --heading-border-size: 0.4rem;
+    --heading-border-color: #bcb9b9;
+}
+
 .articleStyle {
 
     width: 90%;
     display: grid;
     background-color: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 30px;
+    padding: var(--article-padding);
     align-content: center;
     justify-self: center;
     justify-content: left;
+    gap: 1rem;
 }
 
 .articleStyle.withImg {
@@ -38,39 +45,60 @@
 }
 
 .title {
+    font-family: 'DejaVu Sans Mono', monospace;
     font-size: 2rem;
     color: #000000;
     text-align: left;
-    margin-bottom: 1rem;
 }
 
 .subtitle {
+    font-family: 'DejaVu Sans Mono', monospace;
     font-size: 1.4rem;
-    color: #000000;
+    color: #484747;
     text-align: left;
-    margin-bottom: 1rem;
 }
 
 .metaInfo {
     display: flex;
     justify-content: left;
     align-items: center;
-    margin-bottom: 1rem;
+    gap: 2rem;
+}
+
+.metaInfoIcon {
+    width: 24px;
+    height: 24px;
+    color: #484747;
+}
+
+.metaInfoDiv {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+
+.metaInfoText {
+    font-family: 'DejaVu Sans Mono', monospace;
+    font-size: 1.3rem;
+    color: #484747;
+    text-align: left;
+}
+
+.toc {
+    color: #000;
+    font-family: "DejaVu Sans Mono" , monospace;
+
+    width: 90%;
+    display: grid;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: var(--article-padding);
+    align-content: center;
+    justify-self: center;
+    justify-content: left;
     gap: 1rem;
-}
-
-.date {
-    font-size: 1.2rem;
-    color: #000000;
-    text-align: left;
-    margin-bottom: 1rem;
-}
-
-.readTime {
-    font-size: 1.2rem;
-    color: #000000;
-    text-align: left;
-    margin-bottom: 1rem;
 }
 
 .articleContent {
@@ -80,14 +108,47 @@
 }
 
 .articleContent h1 {
+    
+    font-family: 'DejaVu Sans Mono', monospace;
+    font-size: 1.8rem;
+    color: #000000;
+    text-align: left;
+
+    /* Color Band */
+    margin-inline-start: calc((var(--article-padding)) * -1);
+    padding-inline-start: calc(var(--article-padding) - var(--heading-border-size));
+    border-inline-start: var(--heading-border-size) solid var(--heading-border-color);
+
+    
+}
+
+.articleContent h2 {
+    font-size: 1.6rem;
+    color: #000000;
+    text-align: left;
+
+    /* Color Band */
+    margin-inline-start: calc((var(--article-padding)) * -1);
+    padding-inline-start: calc(var(--article-padding) - var(--heading-border-size));
+    border-inline-start: var(--heading-border-size) solid var(--heading-border-color);
+    
+}
+
+.articleContent h3 {
     font-size: 1.4rem;
     color: #000000;
     text-align: left;
+
+    /* Color Band */
+    margin-inline-start: calc((var(--article-padding)) * -1);
+    padding-inline-start: calc(var(--article-padding) - var(--heading-border-size));
+    border-inline-start: var(--heading-border-size) solid #bcbcbc;
     
 }
 
 .articleContent p {
-    font-size: 1rem;
+    font-family: 'Lora', serif;
+    font-size: 1.2rem;
     color: #000000;
     text-align: left;
 }
