@@ -1,5 +1,6 @@
 import { getPostFileNames, getFileNameFromSlug, getPostByFileName } from '@/_lib/posts';
 import styles from '@/styles/article.module.css';
+import Image from 'next/image';
 
 let slugToFilenameMap = null;
 
@@ -16,9 +17,23 @@ export default async function PostPage({ params }) {
   console.log("filename fetched from slug: ", filename);
   const { contentHtml, frontmatter } = await getPostByFileName(filename);
 
+  const image = frontmatter.img ? 
+        <Image
+          src={`/images/${frontmatter.img}`}
+          alt={frontmatter.title}
+          width={800}
+          height={400}
+          className={styles.image}
+        /> : null;
+
+
   return (
     <div className={styles.bgColor}>
-      <article className={styles.articleStyle} >
+      {image}
+      <article className={`${styles.articleStyle} ${ (image == null) ? styles.noImg : styles.withImg }`} >
+        
+        
+
         <h1 className={styles.title}>{frontmatter.title}</h1>
         <h2 className={styles.subtitle}>{frontmatter.subtitle}</h2>
         <div className={styles.metaInfo}>
