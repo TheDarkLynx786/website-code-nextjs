@@ -96,9 +96,15 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: var(--article-padding);
     align-content: center;
-    justify-self: center;
+    justify-self: left;
     justify-content: left;
     gap: 1rem;
+}
+
+.toc li {
+    color: #000;
+    font-size: 1.2rem;
+    font-family: "DejaVu Sans Mono" , monospace;
 }
 
 .articleContent {

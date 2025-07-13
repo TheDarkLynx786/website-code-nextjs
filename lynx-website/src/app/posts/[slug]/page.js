@@ -51,7 +51,7 @@ export default async function PostPage({ params }) {
     const tag = el.tagName.toLowerCase();
     headers.push({
       text: $(el).text(),
-      id: $(el).attr('id') || '', // If no markdown file ID, then generate one
+      id: $(el).attr('id') || $(el).text(), // If no markdown file ID, then generate one
       level: parseInt(tag.replace('h', ''), 10),
     });
   });
@@ -81,14 +81,14 @@ export default async function PostPage({ params }) {
   function renderToc(items) {
     if (!items.length) return null;
     return (
-      <ul>
+      <ol>
         {items.map(item => (
           <li key={item.text + item.level}>
             <a href={`#${item.id}`}>{item.text}</a>
             {renderToc(item.children)}
           </li>
         ))}
-      </ul>
+      </ol>
     );
   }
 
@@ -130,7 +130,10 @@ export default async function PostPage({ params }) {
         </div>
 
         {/* Table of Contents */}
-        <div className={styles.toc}>{renderToc(tocTree)}</div>
+        <div className={styles.toc}>
+          <h1>Table of Contents:</h1>
+          {renderToc(tocTree)}
+        </div>
         {/* Article Content */}
         <div className={styles.articleContent} dangerouslySetInnerHTML={{ __html: contentHtml }} />
       </article>
