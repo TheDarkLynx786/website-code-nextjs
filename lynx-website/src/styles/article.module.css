@@ -101,7 +101,8 @@
     gap: 1rem;
 }
 
-.toc li {
+.toc ol {
+    margin-left: var(--article-padding);
     color: #000;
     font-size: 1.2rem;
     font-family: "DejaVu Sans Mono" , monospace;

@@ -5,7 +5,8 @@ img: "FourHorsemen.jpg"
 date: "2025-07-08"
 readTime: "1"
 slug: "four-horsemen"
-tags: ["music"]
+tags:
+    - "music"
 ---
 
 # Header
@@ -15,6 +16,10 @@ This is my post written in Markdown.
 # Header 2 
 
 They made a sequel ??
+
+## Subheader of Header 2
+
+Yea, and a spinoff too!
 
 # Header 3
 
