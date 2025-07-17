@@ -29,58 +29,41 @@ export default function Header() {
 
     //84 Scroll Pos
 
+    const header = (className) => {
+        return (
+            <header className={className}>
+                <div className={styles.div}>
+                    <Link href="/">
+                        <Image
+                            src="/images/ChooChoo.png"
+                            alt="Site Logo"
+                            width={50}
+                            height={50} 
+                            className={styles.logo}
+                        />
+                    </Link>
+
+                    
+                    
+                    <Button style={styles.navbarButton} onClick={toggleMenu}>☰</Button>
+                    
+                </div>
+                
+                <nav className={`${styles.navbar} ${menuOpen ? styles.open : ""}`}>
+                    <Link href='/' className={styles.divText}> Home </Link>
+                    <Link href='/about' className={styles.divText}>About</Link>
+                    <Link href='/' className={styles.divText}> Contact </Link>
+                    <Link href='/posts' className={styles.divText}> Posts </Link>
+                </nav>
+
+            </header>
+        );
+    }
+
     return(
         <>
-            <header className={styles.header}>
-                <div className={styles.div}>
-                    <Link href="/">
-                        <Image
-                            src="/images/ChooChoo.png"
-                            alt="Site Logo"
-                            width={50}
-                            height={50} 
-                            className={styles.logo}
-                        />
-                    </Link>
-
-                    
-                    
-                    <Button style={styles.navbarButton} onClick={toggleMenu}>☰</Button>
-                    
-                </div>
-                
-                <nav className={`${styles.navbar} ${menuOpen ? styles.open : ""}`}>
-                    <Link href='/' className={styles.divText}> Home </Link>
-                    <Link href='/about' className={styles.divText}>About</Link>
-                    <Link href='/' className={styles.divText}> Contact </Link>
-                </nav>
-
-            </header>
-            
-
-            <header className={`${styles.headerFixed} ${scrollPos ? styles.visible : ""}`}>
-                
-                <div className={styles.div}>
-                    <Link href="/">
-                        <Image
-                            src="/images/ChooChoo.png"
-                            alt="Site Logo"
-                            width={50}
-                            height={50} 
-                            className={styles.logo}
-                        />
-                    </Link>
-
-                    <Button style={styles.navbarButton} onClick={toggleMenu}>☰</Button>
-                </div>
-
-                <nav className={`${styles.navbar} ${menuOpen ? styles.open : ""}`}>
-                    <Link href='/' className={styles.divText}> Home </Link>
-                    <Link href='/about' className={styles.divText}>About</Link>
-                    <Link href='/' className={styles.divText}> Contact </Link>
-                </nav>
-
-            </header>
+            {header(styles.header)}
+            {header(`${styles.headerFixed} ${scrollPos ? styles.visible : ""}`)}
         </>
     );
 }

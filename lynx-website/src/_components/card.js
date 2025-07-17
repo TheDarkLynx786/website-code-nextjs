@@ -16,24 +16,21 @@ export default function Card({children, img, style, href}) {
 
     const cardImgClass = img ? styles.withImg : styles.noImg;
 
-    const card = href ? 
-    <Link href={href} className={`${styles.card} ${overrideStyle} ${cardImgClass}`}>
-        {children}
-    </Link>
-    :
+    const card =
     <div className={`${styles.card} ${overrideStyle} ${cardImgClass}`}>
         {children}
     </div>;
     
+    const wrapper = href ? 
+    <Link href={href} className={styles.wrapper}>
+        {image}
+        {card}
+    </Link>
+    :
+    <div className={styles.wrapper}>
+        {image}
+        {card}
+    </div>;
 
-    if (img) {
-        return (
-            <div className={styles.imageWrapper}>
-                {image}
-                {card}
-            </div>
-        );
-    }
-    
-    return card;
+    return wrapper;
 }
