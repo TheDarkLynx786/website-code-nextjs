@@ -8,13 +8,12 @@
 
   
   display: grid;
-  grid-template-rows: 20px 1fr 20px;
+  grid-template-rows: 1fr 1fr auto;
   align-items: center;
-  justify-items: left;
+  justify-items: center;
   min-height: 100svh;
-  padding: 80px;
-  gap: 64px;
-  font-family: var(--font-geist-sans);
+  padding: 40px;
+  gap: 35px;
 }
 
 @media (prefers-color-scheme: dark) {
