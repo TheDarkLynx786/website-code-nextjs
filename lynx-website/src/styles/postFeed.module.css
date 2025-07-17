@@ -1,23 +1,14 @@
-.postDisplayCard {
-    display: grid;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    max-width: 600px;
-    align-items: center;
-    justify-content: center;
-    height: auto;
-    text-align: center;
-}
+@import url('./card.module.css');
 
 .postFeedContainer {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
     justify-content: left;
-    gap: 1rem;
     padding: 20px;
+}
+
+.card.postFeedCard {
+    text-align: left;
+    gap: 1rem;
 }
 
 .postFeed {
@@ -27,4 +18,24 @@
     justify-content: center;
     gap: 1rem;
     padding: 20px;
+}
+
+.postFeedHeader {
+    font-size: 2rem;
+    font-family: "DejaVu Sans Mono", monospace;
+    color: #000;
+    text-align: left;
+
+}
+
+.postTitle {
+    font-size: 1.5rem;
+    font-family: "DejaVu Sans Mono", monospace;
+    color: #000;
+}
+
+.postDesc {
+    font-size: 1rem;
+    font-family: "DejaVu Sans Mono", monospace;
+    color: #000;
 }
