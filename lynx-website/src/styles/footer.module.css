@@ -46,7 +46,7 @@
 }
 
 .footer {
-    height: 20vh;
+    height: 8rem;
     grid-row-start: 3;
     display: grid;
     background-color: #bcb9b9;
