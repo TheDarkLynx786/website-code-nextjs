@@ -38,6 +38,9 @@ function formatDateWithSuffix(dateString) {
 
 
 export default async function PostPage({ params }) {
+  // Ensure params is awaited and resolved
+  params = await params;
+
   const filename = await getFileNameFromSlug(params.slug);
   console.log("filename fetched from slug: ", filename);
   const { contentHtml, frontmatter } = await getPostByFileName(filename);
@@ -92,6 +95,53 @@ export default async function PostPage({ params }) {
     );
   }
 
+  // Compartmentalization (in case certain frontmatters are not present)
+  
+  // Date
+  const date = frontmatter.date ? 
+  <div className={styles.metaInfoDiv}>
+    <Image
+      src={'/icons/calendar-time.svg'}
+      alt="Calendar Icon"
+      width={24}
+      height={24}
+      className={styles.metaInfoIcon}
+    />
+    <h2 className={styles.metaInfoText}> {formatDateWithSuffix(frontmatter.date)} </h2>
+  </div>
+  : null;
+
+  // Read Time
+  const readTime = frontmatter.readTime ? 
+  <div className={styles.metaInfoDiv}>
+    <Image
+      src={'/icons/clock-hour-4.svg'}
+      alt="Clock Icon"
+      width={24}
+      height={24}
+      className={styles.metaInfoIcon}
+    />
+    <h2 className={styles.metaInfoText}>{frontmatter.readTime} minute read</h2>
+  </div>
+  : null;
+
+  // Meta Information
+  const metaInfo = ( {date} || {readTime} ) ?
+  <div className={styles.metaInfo}>
+    {date}
+    {readTime}
+  </div>
+  : null;
+  
+  // Table of Contents
+  const toc = tocTree.length > 0 ?
+  <div className={styles.toc}>
+    <h1>Table of Contents:</h1>
+    {renderToc(tocTree)}
+  </div>
+  : null;
+
+  // Return complete page
   return (
     <div className={styles.bgColor}>
       {image}
@@ -103,37 +153,11 @@ export default async function PostPage({ params }) {
         <h2 className={styles.subtitle}>{frontmatter.subtitle}</h2>
         
         {/* Meta Information */}
-        <div className={styles.metaInfo}>
-          
-          <div className={styles.metaInfoDiv}>
-            <Image
-              src={'/icons/calendar-time.svg'}
-              alt="Calendar Icon"
-              width={24}
-              height={24}
-              className={styles.metaInfoIcon}
-            />
-            <h2 className={styles.metaInfoText}> {formatDateWithSuffix(frontmatter.date)} </h2>
-          </div>
-          
-          <div className={styles.metaInfoDiv}>
-            <Image
-              src={'/icons/clock-hour-4.svg'}
-              alt="Clock Icon"
-              width={24}
-              height={24}
-              className={styles.metaInfoIcon}
-            />
-            <h2 className={styles.metaInfoText}>{frontmatter.readTime} minute read</h2>
-          </div>
+        { metaInfo}
 
-        </div>
-
-        {/* Table of Contents */}
-        <div className={styles.toc}>
-          <h1>Table of Contents:</h1>
-          {renderToc(tocTree)}
-        </div>
+        {/* Table of Contents */} 
+        { toc }
+        
         {/* Article Content */}
         <div className={styles.articleContent} dangerouslySetInnerHTML={{ __html: contentHtml }} />
       </article>
