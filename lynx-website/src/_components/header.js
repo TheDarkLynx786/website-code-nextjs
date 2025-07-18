@@ -42,7 +42,9 @@ export default function Header() {
                             className={styles.logo}
                         />
                     </Link>
-
+                    <Link href="/" className={styles.siteTitle}>
+                        <h1> Murtaza Haque </h1>
+                    </Link>
                     
                     
                     <Button style={styles.navbarButton} onClick={toggleMenu}>☰</Button>
