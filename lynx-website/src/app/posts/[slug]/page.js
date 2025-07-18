@@ -2,39 +2,18 @@ import { getPostFileNames, getFileNameFromSlug, getPostByFileName } from '@/_lib
 import styles from '@/styles/article.module.css';
 import Image from 'next/image';
 import { load } from 'cheerio';
+import { formatDateWithSuffix } from '@/_lib/dateUtils';
 
 let slugToFilenameMap = null;
 
 export async function generateStaticParams() {
   const posts = getPostFileNames();
   console.log(posts);
+  
   // Build a map from slug to filename
   slugToFilenameMap = {};
   return posts.map( ({ filename }) => ({ filename }) );
 }
-
-// Convert frontmatter YYYY-MM-DD date to readable format
-function formatDateWithSuffix(dateString) {
-  const date = new Date(dateString);
-
-  const day = date.getDate();
-  const month = date.toLocaleString('default', { month: 'long' });
-  const year = date.getFullYear();
-
-  // Get ordinal suffix
-  const getOrdinal = (n) => {
-    if (n > 3 && n < 21) return 'th';
-    switch (n % 10) {
-      case 1: return 'st';
-      case 2: return 'nd';
-      case 3: return 'rd';
-      default: return 'th';
-    }
-  };
-
-  return `${month} ${day}${getOrdinal(day)}, ${year}`;
-}
-
 
 
 export default async function PostPage({ params }) {

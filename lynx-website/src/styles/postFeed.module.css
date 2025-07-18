@@ -39,6 +39,32 @@
     color: #000;
 }
 
+.metaInfo {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 1rem;
+}
+
+.metaInfoIcon {
+    width: 20px;
+    height: 20spx;
+    color: #484747;
+}
+
+.metaInfoDiv {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.metaInfoText {
+    font-family: 'DejaVu Sans Mono', monospace;
+    font-size: 0.9rem;
+    color: #484747;
+    text-align: left;
+}
+
 .seeMore {
     font-size: 1.5rem;
     font-family: "DejaVu Sans Mono", monospace;

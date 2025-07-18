@@ -3,7 +3,9 @@
 import styles from '@/styles/postFeed.module.css'
 import Link from 'next/link';
 import Card from './card';
+import Image from 'next/image';
 import {useState, useEffect} from 'react';
+import { formatDateWithSuffix } from '@/_lib/dateUtils';
 
 export default function PostFeed({posts}) {
     
@@ -24,12 +26,54 @@ export default function PostFeed({posts}) {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    const postCards = posts.slice(0, limit).map((post) => (
-        <Card key={post.slug} style={`${styles.card} ${styles.postFeedCard}`} href={`/posts/${post.slug}`} img={post.img ? `/images/${post.img}` : null}>
+    const postCards = posts.slice(0, limit).map((post) => {
+        // Meta Information Compartmentalization
+        
+        // Date
+        const date = post.date ? 
+        <div className={styles.metaInfoDiv}>
+            <Image
+            src={'/icons/calendar-time.svg'}
+            alt="Calendar Icon"
+            width={24}
+            height={24}
+            className={styles.metaInfoIcon}
+            />
+            <h2 className={styles.metaInfoText}> {formatDateWithSuffix(post.date)} </h2>
+        </div>
+        : null;
+
+        // Read Time
+        const readTime = post.readTime ? 
+        <div className={styles.metaInfoDiv}>
+            <Image
+            src={'/icons/clock-hour-4.svg'}
+            alt="Clock Icon"
+            width={24}
+            height={24}
+            className={styles.metaInfoIcon}
+            />
+            <h2 className={styles.metaInfoText}>{post.readTime} minute read</h2>
+        </div>
+        : null;
+
+        // Meta Information
+        const metaInfo = ( {date} || {readTime} ) ?
+        <div className={styles.metaInfo}>
+            {date}
+            {readTime}
+        </div>
+        : null;
+        
+        
+        return (
+            <Card key={post.slug} style={`${styles.card} ${styles.postFeedCard}`} href={`/posts/${post.slug}`} img={post.img ? `/images/${post.img}` : null}>
                 <h2 className={styles.postTitle}>{post.title}</h2>
-                <p className={styles.postDesc}>{post.content}</p>
-        </Card>
-    ));
+                <p className={styles.postDesc}>{post.subtitle}</p>
+                { metaInfo }
+            </Card>
+        );    
+    });
 
     return (
         <div className={styles.postFeedContainer}>

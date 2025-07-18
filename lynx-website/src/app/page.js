@@ -13,7 +13,7 @@ export default async function Home() {
       console.log("Post frontmatter: ", frontmatter);
       return {
         title: frontmatter.title,
-        content: frontmatter.subtitle,
+        subtitle: frontmatter.subtitle,
         slug: frontmatter.slug || filename, 
         date: frontmatter.date,
         readTime: frontmatter.readTime,
