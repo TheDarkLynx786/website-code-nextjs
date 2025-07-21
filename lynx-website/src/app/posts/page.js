@@ -1,9 +1,14 @@
 import styles from "@/app/page.module.css";
+import PostFeed from "@/_components/postFeed";
+import { PostGen } from '@/_lib/posts';
 
-export default function About() {
+export default async function About() {
+  
+  const posts = await PostGen();
+  
   return (
     <div className={styles.page}>
-      <h1>Future Posts Homepage Here</h1>
+      <PostFeed posts={posts}/>
     </div>
   );
 }

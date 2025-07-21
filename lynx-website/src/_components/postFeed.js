@@ -6,9 +6,12 @@ import Card from './card';
 import Image from 'next/image';
 import {useState, useEffect} from 'react';
 import { formatDateWithSuffix } from '@/_lib/dateUtils';
+import { usePathname } from 'next/navigation';
 
 export default function PostFeed({posts}) {
-    
+    const pathname = usePathname();
+    const postCount = posts.length;
+
     const [limit, setLimit] = useState(6);
 
     useEffect(() => {
@@ -26,7 +29,14 @@ export default function PostFeed({posts}) {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    const postCards = posts.slice(0, limit).map((post) => {
+
+    // Page Check for page-specific rendering
+    const newlimit = (pathname === '/posts') ? postCount : limit;
+    const headerText = (pathname === '/posts') ? "All Posts:" : "Latest Posts:";
+    const seeMore = (pathname === "/posts") ? null :
+    <Link href="/posts" className={styles.seeMore}> {'<'}{'<'} See More Posts {'>'}{'>'} </Link>;
+
+    const postCards = posts.slice(0, newlimit).map((post) => {
         // Meta Information Compartmentalization
         
         // Date
@@ -77,11 +87,11 @@ export default function PostFeed({posts}) {
 
     return (
         <div className={styles.postFeedContainer}>
-            <h1 className={styles.postFeedHeader}>Latest Posts:</h1>
+            <h1 className={styles.postFeedHeader}>{ headerText }</h1>
             <div className={styles.postFeed}>    
                 {postCards}
             </div>
-            <Link href="/posts" className={styles.seeMore}> {'<'}{'<'} See More Posts {'>'}{'>'} </Link>
+            { seeMore}
         </div>
     );
 }
