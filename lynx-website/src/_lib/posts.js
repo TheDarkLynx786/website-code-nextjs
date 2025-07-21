@@ -49,3 +49,24 @@ export async function getPostByFileName(filename) {
     slug,
   };
 }
+
+export async function PostGen() {
+    const filenames = getPostFileNames();
+    const posts = await Promise.all(
+    filenames.map(async ({ filename }) => {
+      console.log("Post filename: ", filename);
+      const { frontmatter } = await getPostByFileName(filename);
+      console.log("Post frontmatter: ", frontmatter);
+      return {
+        title: frontmatter.title,
+        subtitle: frontmatter.subtitle,
+        slug: frontmatter.slug || filename, 
+        date: frontmatter.date,
+        readTime: frontmatter.readTime,
+        img: frontmatter.img,
+      };
+    })
+  );
+
+  return posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+}

@@ -11,9 +11,11 @@
   "dependencies": {
     "bootstrap": "^5.3.3",
     "cheerio": "^1.1.0",
+    "fs": "^0.0.1-security",
     "gray-matter": "^4.0.3",
     "next": "^15.3.5",
     "nextjs": "^0.0.3",
+    "path": "^0.12.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "remark": "^15.0.1",
