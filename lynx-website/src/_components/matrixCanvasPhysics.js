@@ -20,13 +20,37 @@ const MatrixCanvas = ({ children }) => {
 
     canvas.width = width;
     canvas.height = height;
+    
+    const mouse = {
+      x: 0,
+      y: 0,
+      inside: false
+    };
+
+    // Mouse enters canvas
+    canvas.addEventListener("mouseenter", () => {
+      mouse.inside = true;
+    });
+
+    // Mouse leaves canvas
+    canvas.addEventListener("mouseleave", () => {
+      mouse.inside = false;
+    });
+
+    // Track mouse movement within canvas
+    canvas.addEventListener("mousemove", (e) => {
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+    });
+
 
     let fontSize = 16;
     let columns = Math.floor(width / fontSize);
-    const gravity = 0.5;
+    const gravity = 3;
     const repelRadius = 30;
-    const repelForce = 1;
-    const characters = '01アカサタナハマヤラワABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+    const repelForce = 2;
+    const characters = '0123456789アカサタナハマヤラワABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
 
     // Create one particle per column
     const createParticles = () => {
@@ -74,22 +98,33 @@ const MatrixCanvas = ({ children }) => {
 
       for (const p of particlesRef.current) {
         // Repel effect
-        const dx = mouseRef.current.x - p.x;
-        const dy = mouseRef.current.y - p.y;
+        const dx = p.x - mouse.x;
+        const dy = p.y - mouse.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
+        const angle = Math.atan2(dy, dx);
 
-        if (dist < repelRadius) {
-          const angle = Math.atan2(dy, dx);
-          const force = (repelRadius - dist) / repelRadius * repelForce;
-          p.vy -= Math.sin(angle) * force; // repel upward
-          p.vx -= Math.cos(angle) * force; 
+        if (mouse.inside && dist < repelRadius) {
+          console.log('repelling particle');
+
+          const repelFalloff = (repelRadius - dist) / repelRadius;
+          const cappedFalloff = Math.min(repelFalloff, 1);
+          const repelScale = repelForce * cappedFalloff ** 2; // quadratic falloff
+          
+          
+          p.vx += Math.cos(angle) * repelScale * 0.5; // reduce X motion slightly
+          p.vy += Math.sin(angle) * repelScale * 0.2; // reduce Y motion even more
         }
+          
 
         // Apply velocity and gravity
         p.y += p.vy;
         p.x += p.vx || 0;
 
         p.vy += gravity * 0.05;
+
+        // Damping
+        p.vx *= 0.99; 
+        p.vy *= 0.98; 
         
 
         // Update trail timer and add to trail every few frames

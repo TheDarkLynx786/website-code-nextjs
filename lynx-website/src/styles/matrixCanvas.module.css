@@ -3,6 +3,9 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .matrixCanvas {
@@ -12,13 +15,14 @@
   width: 100%;
   height: 100%;
   z-index: 0;
-  pointer-events: none;
+  pointer-events: all;
    /* optional: you can remove this for transparency */
 }
 
 .matrixContent {
   position: relative;
   z-index: 1;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
