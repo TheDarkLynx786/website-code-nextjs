@@ -20,7 +20,7 @@ const MatrixCanvas = ({children}) => {
     const fontSize = 14;
     const columns = Math.floor(width / fontSize);
     const drops = Array(columns).fill(1);
-    const characters = '01アカサタナハマヤラワABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+    const characters = '0123456789アカサタナハマヤラワABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
 
     // Handle resizing
     const handleResize = () => {
