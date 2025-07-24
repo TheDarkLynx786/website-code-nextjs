@@ -47,6 +47,7 @@ export async function getPostByFileName(filename) {
     frontmatter: data,
     contentHtml,
     slug,
+    filename,
   };
 }
 

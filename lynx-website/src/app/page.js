@@ -1,4 +1,4 @@
-import styles from "./page.module.css";
+import styles from "@/styles/page.module.css";
 import Hero from "@/_components/hero";
 import PostFeed from "@/_components/postFeed";
 import { PostGen } from '@/_lib/posts';

@@ -7,6 +7,7 @@ import Image from 'next/image';
 import {useState, useEffect} from 'react';
 import { formatDateWithSuffix } from '@/_lib/dateUtils';
 import { usePathname } from 'next/navigation';
+import { parseStaticPathsResult } from 'next/dist/lib/fallback';
 
 export default function PostFeed({posts}) {
     const pathname = usePathname();
@@ -75,7 +76,7 @@ export default function PostFeed({posts}) {
         </div>
         : null;
         
-        
+
         return (
             <Card key={post.slug} cardStyle={`${styles.card} ${styles.postFeedCard}`} href={`/posts/${post.slug}`} img={post.img ? `/images/${post.img}` : null}>
                 <h2 className={styles.postTitle}>{post.title}</h2>

@@ -24,7 +24,7 @@ export default async function PostPage({ params }) {
   console.log("filename fetched from slug: ", filename);
   const { contentHtml, frontmatter } = await getPostByFileName(filename);
 
-  const image = frontmatter.img ? <Image src={`/images/${frontmatter.img}`} alt={frontmatter.title} width={800} height={400} className={styles.image} /> : null;
+  const image = frontmatter.img ? <Image src={`/images/${filename}/${frontmatter.img}`} alt={frontmatter.title} width={800} height={400} className={styles.image} /> : null;
 
   // Table of Contents Generation
   const $ = load(contentHtml);
