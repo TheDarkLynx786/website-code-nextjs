@@ -21,21 +21,28 @@ const MatrixCanvas = ({children}) => {
     
     
     const fontSize = 14;
-    let columns = Math.floor(width / fontSize);
-    const drops = Array(columns).fill(1);
+    let columns = Math.ceil(width / fontSize);
+    let drops = Array(columns).fill(1);
     const characters = '0123456789アカサタナハマヤラワABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
 
     // Handle resizing
     const handleResize = () => {
+      const dpr = window.devicePixelRatio || 1;
       const rect = container.getBoundingClientRect();
-      columns = Math.floor(width / fontSize);
+      columns = Math.ceil(width / fontSize);
+      drops = Array(columns).fill(1);
       height = rect.height;
       width = rect.width;
+      ctx.scale(dpr, dpr);
       canvas.width = rect.width;
       canvas.height = rect.height;
     };
 
     window.addEventListener('resize', handleResize);
+
+    const observer = new ResizeObserver(handleResize);
+    observer.observe(container);
+
 
     const draw = () => {
       ctx.fillStyle = 'rgba(10, 2, 37, 0.05)';
