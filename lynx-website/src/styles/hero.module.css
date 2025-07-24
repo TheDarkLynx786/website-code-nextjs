@@ -16,17 +16,29 @@
 
 .heroButton {
     background-color: #4CAF50;
-    box-shadow: #000000 0px 1px 1px;;
+    transition: background-color 0.3s ease-in-out;
+
+
     border: none;
     color: white;
     padding: 15px 32px;
+    
     text-align: center;
     text-decoration: wavy;
     display: inline-block;
-    font-size: 16px;
+    font-size: 1.2rem;
+    font-family: "DejaVu Sans Mono", monospace;
+    
     margin: 4px 72px;
     cursor: pointer;
     border-radius: 12px;
+
+    width: 100%;
+}
+
+.heroButton:hover {
+    background-color: #407a42;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .heroCard {
@@ -48,10 +60,6 @@
 
     transform: perspective(1000px) rotateY(var(--degreeX)) rotateX(var(--degreeY));
     transition: transform 0.1s ease-out;
-}
-
-.heroButton:hover {
-    box-shadow: #000000 0px 0px 0px;
 }
 
 .heroTextTitle {
