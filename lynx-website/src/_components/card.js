@@ -2,7 +2,7 @@ import styles from "@/styles/card.module.css"
 import Link from "next/link";
 import Image from "next/image";
 
-export default function Card({children, img, style, href}) {
+export default function Card({children, img, cardStyle, wrapperStyle, href}) {
     const image = img ? 
     <Image
         src={img}
@@ -12,7 +12,8 @@ export default function Card({children, img, style, href}) {
         className={styles.image}
     /> : null;
     
-    const overrideStyle = style ? style : null;
+    const overrideStyle = cardStyle ? cardStyle : null;
+    const overrideWrapperStyle = wrapperStyle ? wrapperStyle : styles.wrapper;
 
     const cardImgClass = img ? styles.withImg : styles.noImg;
 
@@ -22,12 +23,12 @@ export default function Card({children, img, style, href}) {
     </div>;
     
     const wrapper = href ? 
-    <Link href={href} className={styles.wrapper}>
+    <Link href={href} className={overrideWrapperStyle}>
         {image}
         {card}
     </Link>
     :
-    <div className={styles.wrapper}>
+    <div className={overrideWrapperStyle}>
         {image}
         {card}
     </div>;

@@ -29,10 +29,10 @@ const MatrixCanvas = ({children}) => {
     const handleResize = () => {
       const rect = container.getBoundingClientRect();
       columns = Math.floor(width / fontSize);
-      width = rect.width;
       height = rect.height;
-      canvas.width = width;
-      canvas.height = height;
+      width = rect.width;
+      canvas.width = rect.width;
+      canvas.height = rect.height;
     };
 
     window.addEventListener('resize', handleResize);

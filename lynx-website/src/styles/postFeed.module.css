@@ -7,6 +7,7 @@
 }
 
 .card.postFeedCard {
+    display: grid;
     text-align: left;
     gap: 1rem;
 }

@@ -77,7 +77,7 @@ export default function PostFeed({posts}) {
         
         
         return (
-            <Card key={post.slug} style={`${styles.card} ${styles.postFeedCard}`} href={`/posts/${post.slug}`} img={post.img ? `/images/${post.img}` : null}>
+            <Card key={post.slug} cardStyle={`${styles.card} ${styles.postFeedCard}`} href={`/posts/${post.slug}`} img={post.img ? `/images/${post.img}` : null}>
                 <h2 className={styles.postTitle}>{post.title}</h2>
                 <p className={styles.postDesc}>{post.subtitle}</p>
                 { metaInfo }
