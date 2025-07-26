@@ -1,3 +1,7 @@
+:root {
+    --header-height: 5rem;
+}
+
 .navbar {
     
     
@@ -13,6 +17,50 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+/* Spacer to shift layout only at top */
+.headerOffset {
+    transition: height 0.4s ease;
+    height: 0;
+}
+
+.offsetVisible {
+    height: var(--header-height);
+}
+
+.offsetHidden {
+    height: 0;
+}
+
+/* Header itself */
+.headerBase {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #bcb9b9;
+    z-index: 999;
+    box-shadow: 0px 0px 5px black;
+    transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out;
+    transform: translateY(0);
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: var(--header-height);
+}
+
+/* Slide in */
+.headerVisible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Slide out */
+.headerHidden {
+    transform: translateY(-100%);
+    opacity: 0;
 }
 
 .div {
