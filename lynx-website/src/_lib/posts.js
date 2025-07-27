@@ -3,6 +3,8 @@ import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
+import gfm from 'remark-gfm';
+import breaks from 'remark-breaks';
 import { notFound } from 'next/navigation';
 
 const postsDirectory = path.join(process.cwd(), 'src', '_content', 'articles');
@@ -37,7 +39,7 @@ export async function getPostByFileName(filename) {
   const { data, content } = matter(fileContents);
   
   /* Convert markdown content to HTML */
-  const processedContent = await remark().use(html).process(content);
+  const processedContent = await remark().use(gfm).use(breaks).use(html).process(content);
   const contentHtml = processedContent.toString();
   
   /* Custom slug handling (filename if slug not defined) */
