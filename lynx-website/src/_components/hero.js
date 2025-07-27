@@ -1,6 +1,7 @@
 "use client";
 
 import styles from "@/styles/hero.module.css"
+import cardStyles from "@/styles/card.module.css"
 import Button from "./button";
 import Card from "./card";
 import MatrixCanvasPhysics from "@/_components/matrixCanvasPhysics";
@@ -88,7 +89,7 @@ export default function Hero() {
     return(
         <div className={styles.heroContainer}>
             <MatrixCanvas>
-                <Card cardStyle={styles.heroCard} wrapperStyle={styles.heroWrapper}>
+                <Card cardStyle={`${cardStyles.card} ${styles.heroCard}`} wrapperStyle={styles.heroWrapper}>
                     <div className={styles.textButtonDiv}>
                             <h1 className={styles.heroTextTitle}>
                                 Welcome, Internet Traveller! 

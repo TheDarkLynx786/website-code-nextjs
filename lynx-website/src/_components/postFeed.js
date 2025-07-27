@@ -1,6 +1,7 @@
 "use client";
 
 import styles from '@/styles/postFeed.module.css'
+import cardStyles from '@/styles/card.module.css'
 import Link from 'next/link';
 import Card from './card';
 import Image from 'next/image';
@@ -85,7 +86,7 @@ export function HomePostFeed({posts}) {
         
 
         return (
-            <Card key={post.slug} cardStyle={`${styles.card} ${styles.postFeedCard}`} href={`/posts/${post.slug}`} img={post.img ? `/images/${post.img}` : null}>
+            <Card key={post.slug} cardStyle={`${cardStyles.card} ${styles.postFeedCard}`} href={`/posts/${post.slug}`} img={post.img ? `/images/${post.img}` : null}>
                 <h2 className={styles.postTitle}>{post.title}</h2>
                 <p className={styles.postDesc}>{post.subtitle}</p>
                 { metaInfo }
@@ -104,7 +105,7 @@ export function HomePostFeed({posts}) {
     );
 }
 
-export default function PostsPostFeed({posts}) {
+export function PostsPostFeed({posts}) {
     const pathname = usePathname();
     const postCount = posts.length;
 

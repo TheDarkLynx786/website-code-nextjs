@@ -1,15 +1,24 @@
-@import url('./card.module.css');
-
 .postFeedContainer {
     display: grid;
     justify-content: left;
     padding: 20px;;
 }
 
-.card.postFeedCard {
+.postFeedCard {
     display: grid;
+    align-items: center;
+    justify-content: center;
+    
+    padding: 20px;
     text-align: left;
     gap: 1rem;
+
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    
+    height: auto;
+    max-height: 15rem;
+    max-width: 20rem;
 }
 
 .postFeed {

@@ -1,6 +1,6 @@
 
 
-.card {
+/*.card {
     background-color: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -10,7 +10,7 @@
     height: auto;
     max-height: 15rem;
     text-align: center;
-}
+}*/
 
 .card.withImg {
     border-radius: 0px 0px 10px 10px;

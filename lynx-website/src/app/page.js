@@ -1,6 +1,6 @@
 import styles from "@/styles/page.module.css";
 import Hero from "@/_components/hero";
-import HomePostFeed from "@/_components/postFeed";
+import { HomePostFeed } from "@/_components/postFeed";
 import { PostGen } from '@/_lib/posts';
 
 export default async function Home() {
