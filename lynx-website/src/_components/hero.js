@@ -92,7 +92,7 @@ export default function Hero() {
                 <Card cardStyle={`${cardStyles.card} ${styles.heroCard}`} wrapperStyle={styles.heroWrapper}>
                     <div className={styles.textButtonDiv}>
                             <h1 className={styles.heroTextTitle}>
-                                Welcome, Internet Traveller! 
+                                Greetings, Internet Traveller! 
                             </h1>
                             
                             <div>    
