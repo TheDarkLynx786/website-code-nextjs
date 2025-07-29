@@ -1,7 +1,8 @@
 .postFeedContainer {
     display: grid;
     justify-content: left;
-    padding: 20px;;
+    padding: 20px;
+    background-color: rgba(0,0,0,0);
 }
 
 .postFeedCard {
@@ -19,6 +20,14 @@
     height: auto;
     max-height: 15rem;
     max-width: 20rem;
+
+    transform: scale(1, 1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.postFeedCard:hover {
+    transform: scale(1.1, 1.1);
+    transition: transform 0.3s ease-in-out;
 }
 
 .postFeed {

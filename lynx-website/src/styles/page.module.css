@@ -6,13 +6,24 @@
   --button-primary-hover: #383838;
   --button-secondary-hover: #f2f2f2;
 
-  
+
+  background-image: url('/images/geometrybg.png');
+
   display: grid;
-  grid-template-rows: 1fr 1fr auto;
   align-items: center;
   justify-items: center;
   min-height: 100svh;
   gap: 35px;
+}
+
+.page::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  
+  background-size: cover;
+  background-position: center;
+  filter: invert(1);
 }
 
 .notFoundTextTitle {
