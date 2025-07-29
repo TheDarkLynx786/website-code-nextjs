@@ -109,48 +109,41 @@
 }
 
 .articleContent {
+    display: grid;
     color: #000;
     line-height: 1.7;
     text-align: left;
+    gap: 2rem;
 }
 
-.articleContent h1 {
-    
-    font-family: 'DejaVu Sans Mono', monospace;
-    font-size: 1.8rem;
+.articleContent h1,
+.articleContent h2, 
+.articleContent h3, 
+.articleContent h4,
+.articleContent h5,
+.articleContent h6 {
     color: #000000;
     text-align: left;
+    font-family: 'DejaVu Sans Mono', monospace;
 
     /* Color Band */
     margin-inline-start: calc((var(--article-padding)) * -1);
     padding-inline-start: calc(var(--article-padding) - var(--heading-border-size));
     border-inline-start: var(--heading-border-size) solid var(--heading-border-color);
-
     
+}
+
+.articleContent h1 {  
+    font-size: 1.8rem; 
 }
 
 .articleContent h2 {
     font-size: 1.6rem;
-    color: #000000;
-    text-align: left;
-
-    /* Color Band */
-    margin-inline-start: calc((var(--article-padding)) * -1);
-    padding-inline-start: calc(var(--article-padding) - var(--heading-border-size));
-    border-inline-start: var(--heading-border-size) solid var(--heading-border-color);
     
 }
 
 .articleContent h3 {
     font-size: 1.4rem;
-    color: #000000;
-    text-align: left;
-
-    /* Color Band */
-    margin-inline-start: calc((var(--article-padding)) * -1);
-    padding-inline-start: calc(var(--article-padding) - var(--heading-border-size));
-    border-inline-start: var(--heading-border-size) solid #bcbcbc;
-    
 }
 
 .articleContent p {
