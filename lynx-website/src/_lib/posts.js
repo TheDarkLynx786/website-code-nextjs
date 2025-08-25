@@ -60,6 +60,11 @@ export async function PostGen() {
       console.log("Post filename: ", filename);
       const { frontmatter } = await getPostByFileName(filename);
       console.log("Post frontmatter: ", frontmatter);
+      
+      if (frontmatter.draft) {
+        return null;
+      }
+      
       return {
         title: frontmatter.title,
         subtitle: frontmatter.subtitle,
@@ -70,6 +75,8 @@ export async function PostGen() {
       };
     })
   );
-
-  return posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+  
+  // Filter out drafts
+  const filteredPosts = posts.filter(post => post !== null);
+  return filteredPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
 }

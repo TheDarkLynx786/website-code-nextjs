@@ -31,7 +31,7 @@ I could advertise this field to you all day. Real talk, I just wanted to make my
 Consider this site like my digital archive of some sort. I'm going to have quite a few things, including but not limited to:
 
 * Articles on various topics related to my interests, of course, curated by yours truly
-* A lot of the music I produce, go give it a listen!
+* The music I produce (go give it a listen)!
 * A contact page, so you can offer feedback, ideas, conspiracy theories, confessions, etc.
 * A page where I showcase my programming projects (I'll post devlogs normally)
 * A link to my portfolio, for professional purposes.

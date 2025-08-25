@@ -3,6 +3,7 @@ import styles from '@/styles/article.module.css';
 import Image from 'next/image';
 import { load } from 'cheerio';
 import { formatDateWithSuffix } from '@/_lib/dateUtils';
+import { notFound } from 'next/navigation';
 
 let slugToFilenameMap = null;
 
@@ -23,6 +24,11 @@ export default async function PostPage({ params }) {
   const filename = await getFileNameFromSlug(params.slug);
   console.log("filename fetched from slug: ", filename);
   const { contentHtml, frontmatter } = await getPostByFileName(filename);
+
+   // Redirect to 404 if draft
+  if (frontmatter.draft) {
+    return notFound();
+  }
 
   const image = frontmatter.img ? <Image src={`/images/${filename}/${frontmatter.img}`} alt={frontmatter.title} width={800} height={400} className={styles.image} /> : null;
  

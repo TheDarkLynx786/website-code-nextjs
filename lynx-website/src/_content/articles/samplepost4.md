@@ -1,4 +1,5 @@
 ---
+draft: false
 title: "Sample Post 4"
 subtitle: "Testing testing? Cooking in Progress 🔥"
 slug: "sample-post-4"
