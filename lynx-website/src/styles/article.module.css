@@ -39,7 +39,7 @@
 }
 
 .bgColor {
-    background-color: #f2f2f2;
+    background-image: url('/images/geometrybg_translucent.png');
     padding: 1rem;
     display: grid;
 }
