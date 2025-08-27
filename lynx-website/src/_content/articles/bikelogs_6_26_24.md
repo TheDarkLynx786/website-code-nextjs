@@ -41,16 +41,16 @@ The way back was also pretty straightfoward. I did have some problems with the g
 
 ### Gallery
 
-![A picture I took from inside the neighborhood.](NeighborhoodLakeview.jpg)
+![A picture I took from inside the neighborhood.](/lynx-website/public/images/bikelogs_6_26_24/NeighborhoodLakeview.jpg)
 
-![A view of the overflowing lake. That tree is knee-deep. Could trees have knees?](OverflowingLake.jpg)
+![A view of the overflowing lake. That tree is knee-deep. Could trees have knees?](/lynx-website/public/images/bikelogs_6_26_24/OverflowingLake.jpg)
 
-![Photo of the beach without the beach, and the volleyball courts. Volleyball in the water *does* sound fun!](SubmergedBeach.jpg)
+![Photo of the beach without the beach, and the volleyball courts. Volleyball in the water *does* sound fun!](/lynx-website/public/images/bikelogs_6_26_24/SubmergedBeach.jpg)
 
-![A photo of some submerged trees. Normally these would have made for some great shade.](SubmergedTrees.jpg)
+![A photo of some submerged trees. Normally these would have made for some great shade.](/lynx-website/public/images/bikelogs_6_26_24/SubmergedTrees.jpg)
 
-![The water catches up to a nearby building. Lucky that place won't be getting wet.](CloseWaters.jpg)
+![The water catches up to a nearby building. Lucky that place won't be getting wet.](/lynx-website/public/images/bikelogs_6_26_24/CloseWaters.jpg)
 
-![A nice, bankside view of the flooded lake. The sun is soon to set.](BanksideView.jpg)
+![A nice, bankside view of the flooded lake. The sun is soon to set.](/lynx-website/public/images/bikelogs_6_26_24/BanksideView.jpg)
 
-![A final view of the lake from the sidewalk, as well as some more submerged trees. The water touches the sidewalk!](SidewalkLakeview.jpg)
+![A final view of the lake from the sidewalk, as well as some more submerged trees. The water touches the sidewalk!](/lynx-website/public/images/bikelogs_6_26_24/SidewalkLakeview.jpg)

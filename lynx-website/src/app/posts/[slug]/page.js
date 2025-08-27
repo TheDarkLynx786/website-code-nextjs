@@ -25,7 +25,7 @@ export default async function PostPage({ params }) {
   console.log("filename fetched from slug: ", filename);
   const { contentHtml, frontmatter } = await getPostByFileName(filename);
 
-   // Redirect to 404 if draft
+  // Redirect to 404 if draft
   if (frontmatter.draft) {
     return notFound();
   }

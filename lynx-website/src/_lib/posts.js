@@ -10,12 +10,29 @@ import { notFound } from 'next/navigation';
 const postsDirectory = path.join(process.cwd(), 'src', '_content', 'articles');
 
 /* Return array of filenames in /src/app/_contents/articles (w/o .md extension) */
-export function getPostFileNames() {
-  return fs.readdirSync(postsDirectory).map((filename) => ({ filename: filename.replace(/\.md$/, ''), }));
+export function getPostFileNames(dir) {
+  let results = [];
+  const list = fs.readdirSync(dir);
+  list.forEach(file => {
+    const filePath = path.join(dir, file);
+    const stat = fs.statSync(filePath);
+    if (stat && stat.isDirectory()) {
+      results = results.concat(getPostFileNames(filePath));
+    } else if (file.endsWith('.md')) {
+      // Get relative path from postsDirectory
+      const relativePath = path.relative(postsDirectory, filePath);
+      // Split into subfolder and filename (without .md)
+      const parts = relativePath.split(path.sep);
+      const filename = parts.pop().replace(/\.md$/, '');
+      const subfolder = parts.join(path.sep); // '' if in root
+      results.push({ filename, subfolder, filePath });
+    }
+  });
+  return results;
 }
 
 export async function getFileNameFromSlug(slug) {
-  const files = getPostFileNames();
+  const files = getPostFileNames(postsDirectory);
   // Map each file to a promise that resolves to { filename, slug }
   const posts = await Promise.all(
     files.map(async file => {
@@ -36,6 +53,7 @@ export async function getPostByFileName(filename) {
   const fullPath = path.join(postsDirectory, `${filename}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
 
+
   const { data, content } = matter(fileContents);
   
   /* Convert markdown content to HTML */
@@ -54,13 +72,14 @@ export async function getPostByFileName(filename) {
 }
 
 export async function PostGen() {
-    const filenames = getPostFileNames();
+    const filenames = getPostFileNames(postsDirectory);
     const posts = await Promise.all(
     filenames.map(async ({ filename }) => {
       console.log("Post filename: ", filename);
       const { frontmatter } = await getPostByFileName(filename);
       console.log("Post frontmatter: ", frontmatter);
       
+      // Draft filtering
       if (frontmatter.draft) {
         return null;
       }
@@ -76,7 +95,7 @@ export async function PostGen() {
     })
   );
   
-  // Filter out drafts
+  // Filter out drafts from the mapping
   const filteredPosts = posts.filter(post => post !== null);
   return filteredPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
 }
