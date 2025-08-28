@@ -187,3 +187,17 @@
     flex-direction: column;
     gap: 1rem;
 }
+
+.articleContent a {
+    font-family: 'Lora', serif;
+    color: #2d165c;
+    text-align: center;
+
+    background-color: none;
+    transition: background-color 0.3s ease-out;
+}
+
+.articleContent a:hover {
+    background-color: yellow;
+    transition: background-color 0.3s ease-in;
+}
