@@ -90,7 +90,7 @@ export function HomePostFeed({posts}) {
         
 
         return (
-            <Card key={post.slug} cardStyle={`${cardStyles.card} ${styles.postFeedCard}`} href={`/posts/${post.slug}`} img={post.img ? `/images/${post.filename}/${post.img}` : null}>
+            <Card key={post.slug} cardStyle={`${cardStyles.card} ${styles.postFeedCard}`} wrapperStyle={`${styles.postFeedWrapper}`} href={`/posts/${post.slug}`} img={post.img ? `/images/${post.filename}/${post.img}` : null}>
                 <h2 className={styles.postTitle}>{post.title}</h2>
                 <p className={styles.postDesc}>{post.subtitle}</p>
                 { metaInfo }
@@ -185,7 +185,7 @@ export function PostsPostFeed({posts}) {
         
 
         return (
-            <Card key={post.slug} cardStyle={`${styles.card} ${styles.postFeedCard}`} href={`/posts/${post.slug}`} img={post.img ? `/images/${post.filename}/${post.img}` : null}>
+            <Card key={post.slug} cardStyle={`${styles.card} ${styles.postFeedCard}`} wrapperStyle={`${styles.postFeedWrapper}`} href={`/posts/${post.slug}`} img={post.img ? `/images/${post.filename}/${post.img}` : null}>
                 <h2 className={styles.postTitle}>{post.title}</h2>
                 <p className={styles.postDesc}>{post.subtitle}</p>
                 { metaInfo }

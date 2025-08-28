@@ -12,7 +12,7 @@ tags:
 ---
 
 # Evening Lakeside Ride - 6/26/2024 
-# **Distance: ~13 miles**
+# Distance: ~ 13 miles / ~ 20.8 km
 
 ## The Logs
 

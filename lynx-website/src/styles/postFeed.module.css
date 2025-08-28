@@ -21,13 +21,23 @@
     max-height: 15rem;
     max-width: 20rem;
 
+}
+
+.postFeedWrapper {
+    padding: 1rem;
+    display: grid;
+    align-items: center;
+    align-content: center;
+    
     transform: scale(1, 1);
     transition: transform 0.3s ease-in-out;
 }
 
-.postFeedCard:hover {
-    transform: scale(1.1, 1.1);
+.postFeedWrapper:hover {
+    transform: scale(1.05, 1.05);
     transition: transform 0.3s ease-in-out;
+    
+    cursor: pointer;
 }
 
 .postFeed {

@@ -36,4 +36,5 @@
     padding: 1rem;
     display: grid;
     align-items: center;
+    align-content: center;
 }
