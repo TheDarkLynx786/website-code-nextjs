@@ -6,8 +6,9 @@ import html from 'remark-html';
 import gfm from 'remark-gfm';
 import breaks from 'remark-breaks';
 import { notFound } from 'next/navigation';
+import { PRERENDER_REVALIDATE_ONLY_GENERATED_HEADER } from 'next/dist/lib/constants';
 
-const postsDirectory = path.join(process.cwd(), 'src', '_content', 'articles');
+export const postsDirectory = path.join(process.cwd(), 'src', '_content', 'articles');
 
 /* Return array of filenames in /src/app/_contents/articles (w/o .md extension) */
 export function getPostFileNames(dir) {
@@ -28,29 +29,35 @@ export function getPostFileNames(dir) {
       results.push({ filename, subfolder, filePath });
     }
   });
+  console.log(results);
   return results;
 }
 
+/* Given a slug, retrieve the file it corresponds to */
 export async function getFileNameFromSlug(slug) {
   const files = getPostFileNames(postsDirectory);
   // Map each file to a promise that resolves to { filename, slug }
   const posts = await Promise.all(
     files.map(async file => {
-      const post = await getPostByFileName(file.filename);
+      const post = await getPostByFileName(file.filename, file.subfolder);
       console.log('filename:', file.filename, 'slug:', post.slug);
-      return { filename: file.filename, slug: post.slug };
+      return { filename: file.filename, subfolder: file.subfolder, slug: post.slug };
     })
   );
   const match = posts.find(post => post.slug === slug);
   if (!match) {
     notFound();
   }
-  return match.filename;
+  return match;
 }
 
 /* Read markdown file yaml frontmatter and retrieve contents */
-export async function getPostByFileName(filename) {
-  const fullPath = path.join(postsDirectory, `${filename}.md`);
+export async function getPostByFileName(filename, subdir) {
+  
+  console.log("Fetching post by filename: ", filename, " in subdir: ", subdir);
+
+  const fullPath = path.join(postsDirectory, `${subdir}`, `${filename}.md`);
+  console.log("Post full path: ", fullPath);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
 
 
@@ -74,9 +81,9 @@ export async function getPostByFileName(filename) {
 export async function PostGen() {
     const filenames = getPostFileNames(postsDirectory);
     const posts = await Promise.all(
-    filenames.map(async ({ filename }) => {
-      console.log("Post filename: ", filename);
-      const { frontmatter } = await getPostByFileName(filename);
+    filenames.map(async ({ filename, subfolder }) => {
+      console.log("Filename: ", filename)
+      const { frontmatter } = await getPostByFileName(filename, subfolder);
       console.log("Post frontmatter: ", frontmatter);
       
       // Draft filtering

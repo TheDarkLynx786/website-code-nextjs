@@ -1,4 +1,4 @@
-import { getPostFileNames, getFileNameFromSlug, getPostByFileName } from '@/_lib/posts';
+import { postsDirectory, getPostFileNames, getFileNameFromSlug, getPostByFileName } from '@/_lib/posts';
 import styles from '@/styles/article.module.css';
 import Image from 'next/image';
 import { load } from 'cheerio';
@@ -8,7 +8,7 @@ import { notFound } from 'next/navigation';
 let slugToFilenameMap = null;
 
 export async function generateStaticParams() {
-  const posts = getPostFileNames();
+  const posts = getPostFileNames(postsDirectory);
   console.log(posts);
   
   // Build a map from slug to filename
@@ -23,7 +23,7 @@ export default async function PostPage({ params }) {
 
   const filename = await getFileNameFromSlug(params.slug);
   console.log("filename fetched from slug: ", filename);
-  const { contentHtml, frontmatter } = await getPostByFileName(filename);
+  const { contentHtml, frontmatter } = await getPostByFileName(filename.filename, filename.subfolder);
 
   // Redirect to 404 if draft
   if (frontmatter.draft) {
