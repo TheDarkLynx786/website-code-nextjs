@@ -1,7 +1,7 @@
 ---
 title: "6-26-2024 Bike Logs"
 subtitle: "A nice evening lakeside ride."
-img: "FourHorsemen.jpg"
+img: "BanksideView.jpg"
 date: "2024-06-26"
 readTime: "1"
 slug: "bike-logs-6-26-24"
@@ -41,16 +41,16 @@ The way back was also pretty straightfoward. I did have some problems with the g
 
 ### Gallery
 
-![A picture I took from inside the neighborhood.](/lynx-website/public/images/bikelogs_6_26_24/NeighborhoodLakeview.jpg)
+![A picture I took from inside the neighborhood.](/images/bikelogs_6_26_24/NeighborhoodLakeview.jpg)
 
-![A view of the overflowing lake. That tree is knee-deep. Could trees have knees?](/lynx-website/public/images/bikelogs_6_26_24/OverflowingLake.jpg)
+![A view of the overflowing lake. That tree is knee-deep. Could trees have knees?](/images/bikelogs_6_26_24/OverflowingLake.jpg)
 
-![Photo of the beach without the beach, and the volleyball courts. Volleyball in the water *does* sound fun!](/lynx-website/public/images/bikelogs_6_26_24/SubmergedBeach.jpg)
+![Photo of the beach without the beach, and the volleyball courts. Volleyball in the water *does* sound fun!](/images/bikelogs_6_26_24/SubmergedBeach.jpg)
 
-![A photo of some submerged trees. Normally these would have made for some great shade.](/lynx-website/public/images/bikelogs_6_26_24/SubmergedTrees.jpg)
+![A photo of some submerged trees. Normally these would have made for some great shade.](/images/bikelogs_6_26_24/SubmergedTrees.jpg)
 
-![The water catches up to a nearby building. Lucky that place won't be getting wet.](/lynx-website/public/images/bikelogs_6_26_24/CloseWaters.jpg)
+![The water catches up to a nearby building. Lucky that place won't be getting wet.](/images/bikelogs_6_26_24/CloseWaters.jpg)
 
-![A nice, bankside view of the flooded lake. The sun is soon to set.](/lynx-website/public/images/bikelogs_6_26_24/BanksideView.jpg)
+![A nice, bankside view of the flooded lake. The sun is soon to set.](/images/bikelogs_6_26_24/BanksideView.jpg)
 
-![A final view of the lake from the sidewalk, as well as some more submerged trees. The water touches the sidewalk!](/lynx-website/public/images/bikelogs_6_26_24/SidewalkLakeview.jpg)
+![A final view of the lake from the sidewalk, as well as some more submerged trees. The water touches the sidewalk!](/images/bikelogs_6_26_24/SidewalkLakeview.jpg)

@@ -47,7 +47,11 @@ export function HomePostFeed({posts}) {
 
     const postCards = posts.slice(0, newlimit).map((post) => {
         // Meta Information Compartmentalization
-        
+
+        // DEBUG
+        console.log("POSTFEED >> Md Filename: ", post.filename);
+        console.log("POSTFEED >> Image Filename: ", post.img);
+
         // Date
         const date = post.date ? 
         <div className={styles.metaInfoDiv}>
@@ -86,7 +90,7 @@ export function HomePostFeed({posts}) {
         
 
         return (
-            <Card key={post.slug} cardStyle={`${cardStyles.card} ${styles.postFeedCard}`} href={`/posts/${post.slug}`} img={post.img ? `/images/${post.img}` : null}>
+            <Card key={post.slug} cardStyle={`${cardStyles.card} ${styles.postFeedCard}`} href={`/posts/${post.slug}`} img={post.img ? `/images/${post.filename}/${post.img}` : null}>
                 <h2 className={styles.postTitle}>{post.title}</h2>
                 <p className={styles.postDesc}>{post.subtitle}</p>
                 { metaInfo }
@@ -181,7 +185,7 @@ export function PostsPostFeed({posts}) {
         
 
         return (
-            <Card key={post.slug} cardStyle={`${styles.card} ${styles.postFeedCard}`} href={`/posts/${post.slug}`} img={post.img ? `/images/${post.img}` : null}>
+            <Card key={post.slug} cardStyle={`${styles.card} ${styles.postFeedCard}`} href={`/posts/${post.slug}`} img={post.img ? `/images/${post.filename}/${post.img}` : null}>
                 <h2 className={styles.postTitle}>{post.title}</h2>
                 <p className={styles.postDesc}>{post.subtitle}</p>
                 { metaInfo }

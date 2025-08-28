@@ -98,6 +98,7 @@ export async function PostGen() {
         date: frontmatter.date,
         readTime: frontmatter.readTime,
         img: frontmatter.img,
+        filename: filename,
       };
     })
   );

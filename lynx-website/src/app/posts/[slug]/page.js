@@ -25,13 +25,15 @@ export default async function PostPage({ params }) {
   console.log("filename fetched from slug: ", filename);
   const { contentHtml, frontmatter } = await getPostByFileName(filename.filename, filename.subfolder);
 
+  const processedHtml = addFigcaptionToImages(contentHtml);
+
   // Redirect to 404 if draft
   if (frontmatter.draft) {
     return notFound();
   }
 
-  const image = frontmatter.img ? <Image src={`/images/${filename}/${frontmatter.img}`} alt={frontmatter.title} width={800} height={400} className={styles.image} /> : null;
- 
+  const image = frontmatter.img ? <Image src={`/images/${filename.filename}/${frontmatter.img}`} alt={frontmatter.title} width={800} height={400} className={styles.image} /> : null;
+  
   // Table of Contents Generation
   const $ = load(contentHtml);
   const headers = [];
@@ -43,6 +45,23 @@ export default async function PostPage({ params }) {
       level: parseInt(tag.replace('h', ''), 10),
     });
   });
+
+  // Post Image Processing (for captions)
+  function addFigcaptionToImages(html) {
+    const $ = load(html);
+    $('img').each(function () {
+      const img = $(this);
+      const altText = img.attr('alt') || '';
+      const figure = $('<figure></figure>');
+      img.replaceWith(figure);
+      figure.append(img);
+      if (altText) {
+        figure.append(`<figcaption>${altText}</figcaption>`);
+      }
+    });
+    return $.html();
+  }
+
 
   // Build hierarchical structure
   function buildTocTree(headers) {
@@ -144,7 +163,7 @@ export default async function PostPage({ params }) {
         { toc }
         
         {/* Article Content */}
-        <div className={styles.articleContent} dangerouslySetInnerHTML={{ __html: contentHtml }} />
+        <div className={styles.articleContent} dangerouslySetInnerHTML={{ __html: processedHtml }} />
       </article>
     </div>
   );
