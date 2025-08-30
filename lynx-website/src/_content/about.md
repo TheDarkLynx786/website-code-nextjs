@@ -2,11 +2,11 @@
 # I am Murtaza Haque!
 As a budding technomancer and disciple of the computing arts (computer scientist), I welcome you to my finely-crafted JavaScript and CSS mound.  
 <br>
-I develop small solvers, video games, websites, machine learning models, and I love to play around with the fun new tools and technologies that keep rapidly developing.
+I develop small solvers, video games, websites, other types of software, machine learning models, and I love to play around with the fun new tools and technologies that keep rapidly developing.
 <br>
 Oh but that's not all I do.
 <br>
-I am also pretty involved with mathematics, and you would occasionally catch me solving calculus problem or an induction proof.
+I am also pretty involved with mathematics, and you would occasionally catch me solving a calculus problem or an induction proof.
 <br>
 I am a musician as well! I play any percussive instrument, as well as guitar and maybe piano.
 Best part, I make my own music! I throw down my theory knowledge on DAWs and sometimes they turn into bangers. Go listen to some of my music here (insert link here when I make the music page)!

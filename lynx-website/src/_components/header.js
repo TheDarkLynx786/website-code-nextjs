@@ -136,7 +136,7 @@ export default function Header() {
                             className={styles.logo}
                         />
                     </Link>
-                    <Link href="/" className={styles.siteTitle}>
+                    <Link href="/about" className={styles.siteTitle}>
                         <h1> Murtaza Haque </h1>
                     </Link>
 
@@ -155,7 +155,7 @@ export default function Header() {
                         About
                     </Link>
 
-                    <Link href="/" className={styles.divText}>
+                    <Link href="/contact" className={styles.divText}>
                         Contact
                     </Link>
 

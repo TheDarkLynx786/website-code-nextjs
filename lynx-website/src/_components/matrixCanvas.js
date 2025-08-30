@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import styles from '@/styles/matrixCanvas.module.css';
+import styles from '@/styles/canvas.module.css';
 
 const MatrixCanvas = ({children}) => {
   const canvasRef = useRef(null);
@@ -77,9 +77,9 @@ const MatrixCanvas = ({children}) => {
   }, []);
 
   return (
-    <div className={styles.matrixContainer}> 
-        <canvas ref={canvasRef} className={styles.matrixCanvas}> </canvas>
-        <div className={styles.matrixContent}>    
+    <div className={styles.container}> 
+        <canvas ref={canvasRef} className={styles.canvas}> </canvas>
+        <div className={styles.content}>    
             {children}
         </div>
     </div>   
