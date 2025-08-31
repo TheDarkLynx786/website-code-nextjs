@@ -11,13 +11,38 @@ export default function NodeCanvas({children}) {
     const ctx = canvas.getContext("2d");
     let animationFrameId;
 
+    const container = canvas.parentElement;
+    const rect = container.getBoundingClientRect();
+    let width = rect.width;
+    let height = rect.height;
+
+    canvas.width = width;
+    canvas.height = height;
+
     // Resize handling
-    const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+    const handleResize = () => {
+      const dpr = window.devicePixelRatio || 1;
+      const rect = container.getBoundingClientRect();
+
+      width = rect.width;
+      height = rect.height;
+
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+
+      canvas.style.width = `${rect.width}px`;
+      canvas.style.height = `${rect.height}px`;
+
+      ctx.setTransform(1, 0, 0, 1, 0, 0); // reset any scaling
+      ctx.scale(dpr, dpr);
     };
-    resize();
-    window.addEventListener("resize", resize);
+    
+    window.addEventListener("resize", handleResize);
+
+    const observer = new ResizeObserver(handleResize);
+    observer.observe(container);
+    
+    handleResize();
 
     // Node definition
     class Node {
@@ -149,7 +174,7 @@ export default function NodeCanvas({children}) {
 
     return () => {
       cancelAnimationFrame(animationFrameId);
-      window.removeEventListener("resize", resize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 

@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "@/styles/hero.module.css"
+import styles from "@/styles/heroContact.module.css"
 import cardStyles from "@/styles/card.module.css"
 import Button from "./button";
 import Card from "./card";
@@ -74,7 +74,7 @@ function imagePerspective() {
             ref = {imgRef}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            src="/images/ChooChoo.png"
+            src="/images/contact/YouGotMail.png"
             alt="Hero Image"
             width={300}
             height={300}
@@ -93,20 +93,16 @@ export default function Hero() {
                 <Card cardStyle={`${cardStyles.card} ${styles.heroCard}`} wrapperStyle={styles.heroWrapper}>
                     <div className={styles.textButtonDiv}>
                             <h1 className={styles.heroTextTitle}>
-                                Greetings, Internet Traveller! 
+                                Contact Me!
                             </h1>
                             
                             <div>    
                                 <h2 className={styles.heroTextSubtitle}>
-                                    I am
-                                </h2>
-                                <h2 className={styles.heroTextSubtitle}>{text};</h2>
-                                <h2 className={styles.heroTextSubtitle}>
-                                    Welcome to my domain!
+                                    Need to talk? 
+                                    <br/><br/>
+                                    Enter in your stuff below, and I'll get back to you in some time!
                                 </h2>
                             </div>
-
-                            <Button link='/about' style={styles.heroButton} > About Me! </Button>
                     </div>    
                     {image}
                 </Card>
