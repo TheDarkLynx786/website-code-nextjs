@@ -148,18 +148,46 @@ export default function Header() {
                 <nav className={`${styles.navbar} ${menuOpen ? styles.open : ""}`}>
                     
                     <Link href="/" className={styles.divText}>
+                        <Image
+                            src={'/icons/home.svg'}
+                            alt="Home Icon"
+                            width={24}
+                            height={24}
+                            className={styles.linkIcon}
+                        />
                         Home
                     </Link>
 
                     <Link href="/about" className={styles.divText}>
+                        <Image
+                            src={'/icons/user.svg'}
+                            alt="User Icon"
+                            width={24}
+                            height={24}
+                            className={styles.linkIcon}
+                        />
                         About
                     </Link>
 
                     <Link href="/contact" className={styles.divText}>
+                        <Image
+                            src={'/icons/mail.svg'}
+                            alt="Mail Icon"
+                            width={24}
+                            height={24}
+                            className={styles.linkIcon}
+                        />
                         Contact
                     </Link>
 
                     <Link href="/posts" className={styles.divText}>
+                        <Image
+                            src={'/icons/news.svg'}
+                            alt="Posts Icon"
+                            width={24}
+                            height={24}
+                            className={styles.linkIcon}
+                        />
                         Posts
                     </Link>
 

@@ -13,7 +13,11 @@ export default async function Contact() {
       <div className={styles.contactFormContainer}>
         <form action="#" id="form" className={styles.contactForm}>
 
-          <h1 className={styles.contactInputTitles} >NOTE: This page has no functionality yet. Still settings up a JS Email provider...</h1>
+          <h1 className={styles.contactInputTitles} >
+            NOTE: This page has no functionality yet. Still setting up a JS Email provider...
+            <br />
+            Enjoy the cool hero animation for now!
+          </h1>
 
           <div className={styles.contactDiv}> 
               <p className={styles.contactInputTitles}>Name:</p> 

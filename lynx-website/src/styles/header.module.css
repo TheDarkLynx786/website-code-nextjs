@@ -12,10 +12,11 @@
     padding: 10px;
     background-color: #bcb9b9;
     gap: 1rem;
-    
+
     position: absolute;
     top: 50%;
     left: 50%;
+
     transform: translate(-50%, -50%);
 }
 
@@ -136,11 +137,21 @@
     background-color: #bcb9b9;
     transition: background-color 0.3s ease-in-out;
     border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .divText:hover {
     background-color: #9b9999;
     transition: background-color 0.3s ease-in-out;
+}
+
+.linkIcon {
+    width: 22px;
+    height: 22spx;
+    color: #484747;
 }
 
 .headerFixed {
