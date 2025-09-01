@@ -191,6 +191,17 @@ export default function Header() {
                         Posts
                     </Link>
 
+                    <Link href="/music" className={styles.divText}>
+                        <Image
+                            src={'/icons/music.svg'}
+                            alt="Music Icon"
+                            width={24}
+                            height={24}
+                            className={styles.linkIcon}
+                        />
+                        Music
+                    </Link>
+
                 </nav>
             </header>
         </>
