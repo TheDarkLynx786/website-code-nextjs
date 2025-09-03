@@ -100,37 +100,53 @@ export default function CustomMusicPlayer({ src, title = "Untitled", artist = "U
       <audio ref={audioRef} src={src} preload="metadata" />
 
       {/* Track Info */}
-      <div className="track-info">
-        <div className="track-title">{title}</div>
-        <div className="track-artist">{artist}</div>
+      <div className={styles.trackInfo}>
+        <div className={styles.trackTitle}>{title}</div>
+        <div className={styles.trackArtist}>{artist}</div>
       </div>
+      
+      <div className={styles.btnsAndBar}>
+        {/* Controls Row */}
+        <div className={styles.controls}>
+          <button onClick={() => seekRelative(-5)}>-5s</button>
+          <button className={styles.playPauseBtn} onClick={togglePlay}>{playing ? "Pause" : "Play"}</button>
+          <button onClick={() => seekRelative(5)}>+5s</button>
+        </div>
 
-      {/* Controls Row */}
-      <div className="controls">
-        <button onClick={togglePlay}>{playing ? "Pause" : "Play"}</button>
-        <button onClick={() => seekRelative(-5)}>-5s</button>
-        <button onClick={() => seekRelative(5)}>+5s</button>
-      </div>
-
-      {/* Progress Bar */}
-      <div className="controls">
-        <div
-          ref={progressRef}
-          onClick={handleProgressClick}
-          className="progress-container"
-        >
+        {/* Progress Bar OLD */}
+        <div className={styles.controls}>
+          
           <div
-            style={{ width: `${(currentTime / Math.max(1, duration)) * 100}%` }}
-            className="progress"
-          />
-        </div>
-        <div className="time-display">
-          {formatTime(currentTime)} / {formatTime(duration)}
-        </div>
+            ref={progressRef}
+            onClick={handleProgressClick}
+            className={styles.progressContainer}
+          >
+            
+            {/* Background track */} 
+            <div
+              className={styles.progressTrack}
+            >
+              
+              {/* Foreground fill */} 
+              <div
+                style={{ width: `${(currentTime / Math.max(1, duration)) * 100}%` }}
+                className={styles.progressFill}
+              >
+              </div>
+
+            </div>
+
+          </div>
+          
+          <div className={styles.time}>
+            {formatTime(currentTime)} / {formatTime(duration)}
+          </div>
+
+        </div> 
       </div>
 
       {/* Volume + Options */}
-      <div className="controls">
+      <div className={styles.controls}>
         <button onClick={() => setMuted((m) => !m)}>
           {muted ? "Unmute" : "Mute"}
         </button>
@@ -154,6 +170,7 @@ export default function CustomMusicPlayer({ src, title = "Untitled", artist = "U
             type="checkbox"
             checked={loop}
             onChange={(e) => setLoop(e.target.checked)}
+            className={styles.loopBtn}
           />
           Loop
         </label>

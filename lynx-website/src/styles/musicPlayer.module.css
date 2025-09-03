@@ -1,19 +1,20 @@
 .musicPlayer {
     display: flex;
+    justify-self: center;
+    width: 80%;
     flex-direction: column;
     gap: 0.5rem;
-    font-family: sans-serif;
     background-color: #f8f9fa;
     border: 1px solid #ddd;
     border-radius: 0.75rem;
     padding: 1rem;
-    max-width: 320px;
 }
 
 
 .controls {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
 }
 
@@ -47,6 +48,7 @@
     align-items: center;
     gap: 0.4rem;
     flex: 1;
+    min-width: 5rem;
 }
 
 
@@ -56,14 +58,38 @@
     accent-color: #007bff;
 }
 
+.progressTrack {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  background-color: #e9ecef;  /* gray background  */
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.progressFill {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 8px;
+  width: 100%;
+  background-color: #007bff;  /* blue progress */ 
+  transition: width 0.2s linear;
+} 
 
 .time {
     font-size: 0.75rem;
+    font-family: "DejaVu Sans Mono", monospace;
     color: #333;
     min-width: 60px;
     text-align: right;
 }
 
+.btnsAndBar {
+    display: flex;
+    gap: 0.5rem;
+}
 
 .volumeContainer {
     display: flex;
@@ -76,4 +102,27 @@
     width: 80px;
     cursor: pointer;
     accent-color: #007bff;
+}
+
+.trackInfo {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+}
+
+.trackTitle {
+    font-weight: bold;
+    font-family: 'DejaVu Sans Mono', monospace;
+    font-size: 1rem;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.trackArtist {
+    font-weight: bold;
+    font-size: 0.5rem;
+    color: #212529;
+    text-align: center;
+    margin-bottom: 0.5rem;
 }
