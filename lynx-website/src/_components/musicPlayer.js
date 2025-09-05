@@ -1,11 +1,18 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import Card from './card';
+import Image from 'next/image';
 import styles from '@/styles/musicPlayer.module.css';
 
 export default function CustomMusicPlayer({ src, title = "Untitled", artist = "Unknown"}) {
   const audioRef = useRef(null);
   const progressRef = useRef(null);
+  const canvasRef = useRef(null);
+  const audioContextRef = useRef(null);
+  const analyserRef = useRef(null);
+  const sourceRef = useRef(null);
+  const rafRef = useRef(null);
 
   const [playing, setPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
@@ -57,9 +64,11 @@ export default function CustomMusicPlayer({ src, title = "Untitled", artist = "U
       if (audio.paused) {
         await audio.play();
         setPlaying(true);
+        initVisualizer();
       } else {
         audio.pause();
         setPlaying(false);
+        cancelAnimationFrame(rafRef.current);
       }
     } catch (err) {
       console.warn("Playback failed:", err);
@@ -95,101 +104,152 @@ export default function CustomMusicPlayer({ src, title = "Untitled", artist = "U
     seek(fraction);
   };
 
+  function initVisualizer() {
+    if (!audioRef.current) return;
+    if (!audioContextRef.current) {
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      audioContextRef.current = new AudioCtx();
+    }
+
+    if (!analyserRef.current) {
+      analyserRef.current = audioContextRef.current.createAnalyser();
+      analyserRef.current.fftSize = 256;
+    }
+
+    if (!sourceRef.current) {
+      sourceRef.current = audioContextRef.current.createMediaElementSource(audioRef.current);
+      sourceRef.current.connect(analyserRef.current);
+      analyserRef.current.connect(audioContextRef.current.destination);
+    }
+
+    drawBars();
+  }
+
+  function drawBars() {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    const analyser = analyserRef.current;
+    if (!canvas || !ctx || !analyser) return;
+
+    const bufferLength = analyser.frequencyBinCount;
+    const dataArray = new Uint8Array(bufferLength);
+
+    const { width, height } = canvas;
+
+    ctx.clearRect(0, 0, width, height);
+    analyser.getByteFrequencyData(dataArray);
+
+    const barWidth = (width / bufferLength) * 2.5;
+    let x = 0;
+    const heightScale = 0.75;
+
+    for (let i = 0; i < bufferLength; i++) {
+      const barHeight = (dataArray[i] / 255) * height * heightScale;
+
+      ctx.fillStyle = `rgb(${dataArray[i]}, 100, 200)`;
+      ctx.fillRect(x, height - barHeight, barWidth, barHeight);
+
+      x += barWidth + 1;
+    }
+
+    rafRef.current = requestAnimationFrame(drawBars);
+  }
+
   return (
-    <div className={`${styles.musicPlayer}`}>
+    <Card cardStyle={`${styles.musicPlayer}`}>
+      {/* Track Cover and Audio Graphic */}
+      <div>
+        <Image 
+          src='/images/fourhorsemen/FourHorsemen.jpg'
+          alt='Track Cover'
+          width={100}
+          height={100}
+          className={styles.trackCover}
+        />
+        <h3 className={styles.coverCaption}>Four Horsemen</h3>
+
+        {/* Audio Visualizer Canvas */}
+        <canvas ref={canvasRef} width={150} height={60} style={{ width: "100%", height: "60px", background: "#000", borderRadius: "4px" }} />
+      </div>
+
       <audio ref={audioRef} src={src} preload="metadata" />
 
       {/* Track Info */}
-      <div className={styles.trackInfo}>
-        <div className={styles.trackTitle}>{title}</div>
-        <div className={styles.trackArtist}>{artist}</div>
-      </div>
-      
-      <div className={styles.btnsAndBar}>
-        {/* Controls Row */}
-        <div className={styles.controls}>
-          <button onClick={() => seekRelative(-5)}>-5s</button>
-          <button className={styles.playPauseBtn} onClick={togglePlay}>{playing ? "Pause" : "Play"}</button>
-          <button onClick={() => seekRelative(5)}>+5s</button>
+      <div>
+        <div className={styles.trackInfo}>
+          <div className={styles.trackTitle}>{title}</div>
+          <div className={styles.trackArtist}>{artist}</div>
         </div>
+        
+        <div className={styles.btnsAndBar}>
+          <button className={styles.playPauseBtn} onClick={togglePlay}>{playing ? "Pause" : "Play"}</button>
 
-        {/* Progress Bar OLD */}
-        <div className={styles.controls}>
-          
-          <div
-            ref={progressRef}
-            onClick={handleProgressClick}
-            className={styles.progressContainer}
-          >
-            
-            {/* Background track */} 
+          <div className={styles.controls}>
             <div
-              className={styles.progressTrack}
+              ref={progressRef}
+              onClick={handleProgressClick}
+              className={styles.progressContainer}
             >
-              
-              {/* Foreground fill */} 
-              <div
-                style={{ width: `${(currentTime / Math.max(1, duration)) * 100}%` }}
-                className={styles.progressFill}
-              >
+              <div className={styles.progressTrack}>
+                <div
+                  style={{ width: `${(currentTime / Math.max(1, duration)) * 100}%` }}
+                  className={styles.progressFill}
+                ></div>
               </div>
-
             </div>
 
+            <div className={styles.time}>
+              {formatTime(currentTime)} / {formatTime(duration)}
+            </div>
           </div>
-          
-          <div className={styles.time}>
-            {formatTime(currentTime)} / {formatTime(duration)}
-          </div>
+        </div>
 
-        </div> 
-      </div>
-
-      {/* Volume + Options */}
-      <div className={styles.controls}>
-        <button onClick={() => setMuted((m) => !m)}>
-          {muted ? "Unmute" : "Mute"}
-        </button>
-
-        <input
-          type="range"
-          min={0}
-          max={1}
-          step={0.01}
-          value={muted ? 0 : volume}
-          onChange={(e) => {
-            const v = Number(e.target.value);
-            setVolume(v);
-            if (v === 0) setMuted(true);
-            else setMuted(false);
-          }}
-        />
-
-        <label className="options">
+        {/* Volume + Options */}
+        <div className={styles.controls}>
+          <button onClick={() => seekRelative(-5)}>-5s</button>
+          <button onClick={() => setMuted((m) => !m)}>{muted ? "Unmute" : "Mute"}</button>
           <input
-            type="checkbox"
-            checked={loop}
-            onChange={(e) => setLoop(e.target.checked)}
-            className={styles.loopBtn}
+            type="range"
+            min={0}
+            max={1}
+            step={0.01}
+            value={muted ? 0 : volume}
+            onChange={(e) => {
+              const v = Number(e.target.value);
+              setVolume(v);
+              if (v === 0) setMuted(true);
+              else setMuted(false);
+            }}
           />
-          Loop
-        </label>
+          <button onClick={() => seekRelative(5)}>+5s</button>
 
-        <label className="options">
-          Speed:
-          <select
-            value={playbackRate}
-            onChange={(e) => setPlaybackRate(Number(e.target.value))}
-          >
-            <option value={0.5}>0.5x</option>
-            <option value={0.75}>0.75x</option>
-            <option value={1}>1x</option>
-            <option value={1.25}>1.25x</option>
-            <option value={1.5}>1.5x</option>
-            <option value={2}>2x</option>
-          </select>
-        </label>
+          <label className="options">
+            <input
+              type="checkbox"
+              checked={loop}
+              onChange={(e) => setLoop(e.target.checked)}
+              className={styles.loopBtn}
+            />
+            Loop
+          </label>
+
+          <label className="options">
+            Speed:
+            <select
+              value={playbackRate}
+              onChange={(e) => setPlaybackRate(Number(e.target.value))}
+            >
+              <option value={0.5}>0.5x</option>
+              <option value={0.75}>0.75x</option>
+              <option value={1}>1x</option>
+              <option value={1.25}>1.25x</option>
+              <option value={1.5}>1.5x</option>
+              <option value={2}>2x</option>
+            </select>
+          </label>
+        </div>
       </div>
-    </div>
+    </Card>
   );
 }
+

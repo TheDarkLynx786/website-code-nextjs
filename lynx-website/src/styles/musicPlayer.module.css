@@ -1,8 +1,8 @@
 .musicPlayer {
-    display: flex;
+    display: grid;
+    grid-template-columns: 150px auto;
     justify-self: center;
     width: 80%;
-    flex-direction: column;
     gap: 0.5rem;
     background-color: #f8f9fa;
     border: 1px solid #ddd;
@@ -16,6 +16,7 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+    width: 100%;
 }
 
 
