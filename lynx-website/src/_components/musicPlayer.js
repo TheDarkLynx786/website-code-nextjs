@@ -158,31 +158,54 @@ export default function CustomMusicPlayer({ src, title = "Untitled", artist = "U
   return (
     <Card cardStyle={`${styles.musicPlayer}`}>
       {/* Track Cover and Audio Graphic */}
-      <div>
-        <Image 
-          src='/images/fourhorsemen/FourHorsemen.jpg'
-          alt='Track Cover'
-          width={100}
-          height={100}
-          className={styles.trackCover}
-        />
-        <h3 className={styles.coverCaption}>Four Horsemen</h3>
+      <div className={styles.coverAndVisualizer}>
+        <div>
+          <Image 
+            src='/images/fourhorsemen/FourHorsemen.jpg'
+            alt='Track Cover'
+            width={250}
+            height={250}
+            className={styles.trackCover}
+          />
+          <h3 className={styles.coverCaption}>Four Horsemen</h3>
+        </div>
 
         {/* Audio Visualizer Canvas */}
-        <canvas ref={canvasRef} width={150} height={60} style={{ width: "100%", height: "60px", background: "#000", borderRadius: "4px" }} />
+        <canvas ref={canvasRef} width={300} height={60} className={styles.visualizer} />
       </div>
 
       <audio ref={audioRef} src={src} preload="metadata" />
 
       {/* Track Info */}
-      <div>
+      <div className={styles.trackInfoDiv}>
         <div className={styles.trackInfo}>
           <div className={styles.trackTitle}>{title}</div>
           <div className={styles.trackArtist}>{artist}</div>
+          <div className={styles.trackDateGenre}>
+            <span>2025</span> | <span>Grunge</span>
+          </div>
         </div>
         
         <div className={styles.btnsAndBar}>
-          <button className={styles.playPauseBtn} onClick={togglePlay}>{playing ? "Pause" : "Play"}</button>
+          <button className={styles.playPauseBtn} onClick={togglePlay}>
+              
+              {playing ? 
+                <Image
+                  src='/icons/player-pause.svg'
+                  alt="Play"
+                  width={20}
+                  height={20}
+                /> 
+              : 
+                <Image
+                  src='/icons/player-play.svg'
+                  alt="Pause"
+                  width={20}
+                  height={20}
+                /> 
+              }
+              
+            </button>
 
           <div className={styles.controls}>
             <div
@@ -206,49 +229,112 @@ export default function CustomMusicPlayer({ src, title = "Untitled", artist = "U
 
         {/* Volume + Options */}
         <div className={styles.controls}>
-          <button onClick={() => seekRelative(-5)}>-5s</button>
-          <button onClick={() => setMuted((m) => !m)}>{muted ? "Unmute" : "Mute"}</button>
-          <input
-            type="range"
-            min={0}
-            max={1}
-            step={0.01}
-            value={muted ? 0 : volume}
-            onChange={(e) => {
-              const v = Number(e.target.value);
-              setVolume(v);
-              if (v === 0) setMuted(true);
-              else setMuted(false);
-            }}
-          />
-          <button onClick={() => seekRelative(5)}>+5s</button>
+          
+          <button className={styles.seekBtn} onClick={() => seekRelative(-5)}>
+            <Image
+                  src='/icons/rewind-backward-5.svg'
+                  alt="Pause"
+                  width={20}
+                  height={20}
+            /> 
+          </button>
+          
+          <div className={styles.volumeControl}>
+
+            <button className={styles.controlBtnIcon} onClick={() => setMuted((m) => !m)}>
+              {muted ? 
+                <Image
+                  src='/icons/volume-off.svg'
+                  alt="Muted"
+                  width={20}
+                  height={20}
+                /> 
+              : 
+                <Image
+                  src='/icons/volume.svg'
+                  alt="Volume"
+                  width={20}
+                  height={20}
+                /> 
+              }
+            </button>
+            
+            <input
+              type="range"
+              min={0}
+              max={1}
+              step={0.01}
+              value={muted ? 0 : volume}
+              className={styles.volumeSlider}
+              onChange={(e) => {
+                const v = Number(e.target.value);
+                setVolume(v);
+                if (v === 0) setMuted(true);
+                else setMuted(false);
+              }}
+            />
+
+          </div>
+
+          <button className={styles.seekBtn} onClick={() => seekRelative(5)}>
+            <Image
+                  src='/icons/rewind-forward-5.svg'
+                  alt="Pause"
+                  width={20}
+                  height={20}
+            /> 
+          </button>
 
           <label className="options">
-            <input
-              type="checkbox"
-              checked={loop}
-              onChange={(e) => setLoop(e.target.checked)}
-              className={styles.loopBtn}
-            />
-            Loop
+            <button
+              onClick={ () => setLoop((l) => !l) }
+              className={styles.controlBtnIcon}
+            >
+              
+              {loop ? 
+                <Image
+                  src='/icons/repeat-off.svg'
+                  alt="No Loop"
+                  width={20}
+                  height={20}
+                /> 
+              : 
+                <Image
+                  src='/icons/repeat.svg'
+                  alt="Loop"
+                  width={20}
+                  height={20}
+                /> 
+              }
+
+            </button>
           </label>
 
-          <label className="options">
+          <label className={styles.playbackSpeed}>
             Speed:
             <select
               value={playbackRate}
               onChange={(e) => setPlaybackRate(Number(e.target.value))}
+              className={styles.playbackSelect}
             >
               <option value={0.5}>0.5x</option>
               <option value={0.75}>0.75x</option>
-              <option value={1}>1x</option>
+              <option value={1}>Normal</option>
               <option value={1.25}>1.25x</option>
               <option value={1.5}>1.5x</option>
               <option value={2}>2x</option>
             </select>
           </label>
         </div>
+          
+        {/* Track Info */}  
+        <div className={styles.trackDesc}>
+          Track Info
+        </div>
+      
       </div>
+
+      
     </Card>
   );
 }

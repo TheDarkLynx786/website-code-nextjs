@@ -1,10 +1,15 @@
+:root{
+    --player-bg-color: #f8f9fa;
+    --player-bg-color-darken: #d8dadb;
+}
+
 .musicPlayer {
     display: grid;
-    grid-template-columns: 150px auto;
+    grid-template-columns: 300px auto;
     justify-self: center;
     width: 80%;
     gap: 0.5rem;
-    background-color: #f8f9fa;
+    background-color: var(--player-bg-color);
     border: 1px solid #ddd;
     border-radius: 0.75rem;
     padding: 1rem;
@@ -20,9 +25,8 @@
 }
 
 
-.playPauseBtn,
-.loopBtn {
-    background-color: #007bff;
+.playPauseBtn {
+    background-color: #ff8400; /* inverse of #007bff */
     border: none;
     color: white;
     padding: 0.4rem 0.75rem;
@@ -30,19 +34,12 @@
     cursor: pointer;
     font-size: 0.9rem;
     transition: background-color 0.2s ease;
+    filter: invert(1);
 }
 
-
-.playPauseBtn:hover,
-.loopBtn:hover {
-    background-color: #0056b3;
+.playPauseBtn:hover {
+    background-color: #ffbc74;
 }
-
-
-.loopBtn.active {
-    background-color: #28a745;
-}
-
 
 .progressContainer {
     display: flex;
@@ -90,6 +87,7 @@
 .btnsAndBar {
     display: flex;
     gap: 0.5rem;
+    width: 100%;
 }
 
 .volumeContainer {
@@ -105,25 +103,156 @@
     accent-color: #007bff;
 }
 
+.trackInfoDiv {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    padding: 10px;
+    gap: 0.5rem;
+}
+
 .trackInfo {
     display: flex;
     align-items: start;
     flex-direction: column;
+    gap: 0.5rem;
 }
 
 .trackTitle {
     font-weight: bold;
     font-family: 'DejaVu Sans Mono', monospace;
-    font-size: 1rem;
+    font-size: 2.5rem;
     color: #000000;
     text-align: center;
-    margin-bottom: 0.5rem;
 }
 
 .trackArtist {
     font-weight: bold;
-    font-size: 0.5rem;
+    font-size: 1rem;
     color: #212529;
     text-align: center;
-    margin-bottom: 0.5rem;
+}
+
+.trackDateGenre {
+    font-size: 0.9rem;
+    color: #495057;
+    text-align: center;
+}
+
+.trackCover {
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    object-fit: cover;
+
+    display: flex;
+    justify-self: center;
+}
+
+.coverCaption {
+    font-size: 0.75rem;
+    color: #000;
+    font-style: italic;
+    text-align: center;
+    font-family: "DejaVu Sans Mono", monospace;
+}
+
+.visualizer {
+    width: 75%;
+    height: 60px;
+    background-color: rgba(10, 2, 37);
+    border-radius: 4px;
+}
+
+.coverAndVisualizer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.volumeControl {
+    display: flex;
+    align-items: center;
+}
+
+.volumeSlider {
+    width: 5rem;
+    scale: 0.9;
+    display: flex;
+    align-self: center;
+
+    accent-color: #0055af;
+    transition: accent-color 0.2s ease;
+}
+
+.controlBtnIcon {
+    background-color: var(--player-bg-color);
+    transition: background-color 0.2s ease;
+    
+    border: none;
+    border-radius: 6px;
+    padding: 3px;
+    display: flex;
+    align-content: center;
+    cursor: pointer;
+}
+
+.controlBtnIcon:hover {
+    background-color: var(--player-bg-color-darken);
+    transition: background-color 0.2s ease;
+}
+
+
+.seekBtn {
+    background-color: var(--player-bg-color);
+    transition: background-color 0.2s ease;
+
+    font-family: "DejaVu Sans Mono", monospace;
+    border: none;
+    color: #000;
+    padding: 3px;
+    border-radius: 6px;
+    display: flex;
+    
+
+}
+
+.seekBtn:hover {
+    background-color: var(--player-bg-color-darken);
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.playbackSpeed {
+    font-family: "DejaVu Sans Mono", monospace;
+    font-size: 0.9rem;
+    color: #000;
+}
+
+.playbackSelect {
+    margin-left: 0.25rem;
+    
+    background-color: #0055af;
+    transition: background-color 0.2s ease;
+
+    font-family: "DejaVu Sans Mono", monospace;
+    font-size: 0.9rem;
+    padding: 2px;
+    border-radius: 6px;
+}
+
+.playbackSelect:hover {
+    background-color: #00438b;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.trackDesc {
+    height: auto;
+    
+    font-size: 1rem;
+    color: #333;
+    text-align: left;
+    font-family: "Lora", serif;
 }
