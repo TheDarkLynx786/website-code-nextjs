@@ -35,6 +35,8 @@
     font-size: 0.9rem;
     transition: background-color 0.2s ease;
     filter: invert(1);
+
+    display: flex;
 }
 
 .playPauseBtn:hover {
@@ -128,13 +130,15 @@
 
 .trackArtist {
     font-weight: bold;
-    font-size: 1rem;
+    font-family: 'DejaVu Sans Mono', monospace;
+    font-size: 1.4rem;
     color: #212529;
     text-align: center;
 }
 
 .trackDateGenre {
-    font-size: 0.9rem;
+    font-size: 1rem;
+    font-family: 'DejaVu Sans Mono', monospace;
     color: #495057;
     text-align: center;
 }
@@ -142,6 +146,7 @@
 .trackCover {
     width: 250px;
     height: 250px;
+    border: 2px solid #494949;
     border-radius: 10px;
     object-fit: cover;
 
@@ -162,6 +167,7 @@
     height: 60px;
     background-color: rgba(10, 2, 37);
     border-radius: 4px;
+    border: 2px solid #494949;
 }
 
 .coverAndVisualizer {

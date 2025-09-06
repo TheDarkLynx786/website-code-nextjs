@@ -293,15 +293,15 @@ export default function CustomMusicPlayer({ src, title = "Untitled", artist = "U
               
               {loop ? 
                 <Image
-                  src='/icons/repeat-off.svg'
-                  alt="No Loop"
+                  src='/icons/repeat.svg'
+                  alt="Loop"
                   width={20}
                   height={20}
                 /> 
               : 
                 <Image
-                  src='/icons/repeat.svg'
-                  alt="Loop"
+                  src='/icons/repeat-off.svg'
+                  alt="No Loop"
                   width={20}
                   height={20}
                 /> 
