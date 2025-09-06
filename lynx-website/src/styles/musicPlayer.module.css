@@ -7,7 +7,7 @@
     display: grid;
     grid-template-columns: 300px auto;
     justify-self: center;
-    width: 80%;
+    width: 90%;
     gap: 0.5rem;
     background-color: var(--player-bg-color);
     border: 1px solid #ddd;
@@ -15,6 +15,13 @@
     padding: 1rem;
 }
 
+.progBarAndTime {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+}
 
 .controls {
     display: flex;
@@ -261,4 +268,101 @@
     color: #333;
     text-align: left;
     font-family: "Lora", serif;
+}
+
+.controlsPartitionOne {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.controlsPartitionTwo {
+    display: flex;
+    gap: 0.5rem;
+}
+
+@media (max-width: 860px) {
+    .musicPlayer {
+        grid-template-columns: 1fr;
+        width: 95%;
+    }
+    .trackCover {
+        width: 200px;
+        height: 200px;
+    }
+    .visualizer {
+        width: 100%;
+    }
+    .trackTitle {
+        font-size: 2rem;
+    }
+    .trackArtist {
+        font-size: 1.2rem;
+    }
+    .trackDateGenre {
+        font-size: 0.9rem;
+    }
+    .controls {
+        gap: 0.75rem;
+    }
+    .btnsAndBar {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 0.75rem;
+    }
+    .visualizer {
+        height: 50px;
+        width: 60%;
+    }
+}
+
+@media (max-width: 400px) {
+    .musicPlayer {
+        max-width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .trackCover {
+        width: 150px;
+        height: 150px;
+    }
+    .trackTitle {
+        font-size: 1.5rem;
+    }
+    .trackArtist {
+        font-size: 1rem;
+    }
+    .trackDateGenre {
+        font-size: 0.8rem;
+    }
+    .visualizer {
+        height: 40px;
+        width: 80%;
+    }
+    .trackInfoDiv {
+        display: flex;
+        grid-template-rows: 1fr;
+        align-items: center;
+    }
+    .trackInfo {
+        align-items: center;
+        text-align: center;
+    }
+    .btnsAndBar {
+        display: flex;
+        flex-direction: column;
+    }
+    .playPauseBtn {
+        margin: auto;
+    }
+    .progBarAndTime {
+        display: flex;
+        justify-content: center;
+    }
+    .controls {
+        display: flex;
+        flex-direction: column;
+    }
 }

@@ -205,9 +205,10 @@ export default function CustomMusicPlayer({ src, title = "Untitled", artist = "U
                 /> 
               }
               
-            </button>
-
-          <div className={styles.controls}>
+          </button>
+          
+          {/* Progress Bar and Time */}
+          <div className={styles.progBarAndTime}>
             <div
               ref={progressRef}
               onClick={handleProgressClick}
@@ -230,103 +231,109 @@ export default function CustomMusicPlayer({ src, title = "Untitled", artist = "U
         {/* Volume + Options */}
         <div className={styles.controls}>
           
-          <button className={styles.seekBtn} onClick={() => seekRelative(-5)}>
-            <Image
-                  src='/icons/rewind-backward-5.svg'
-                  alt="Pause"
-                  width={20}
-                  height={20}
-            /> 
-          </button>
-          
-          <div className={styles.volumeControl}>
-
-            <button className={styles.controlBtnIcon} onClick={() => setMuted((m) => !m)}>
-              {muted ? 
-                <Image
-                  src='/icons/volume-off.svg'
-                  alt="Muted"
-                  width={20}
-                  height={20}
-                /> 
-              : 
-                <Image
-                  src='/icons/volume.svg'
-                  alt="Volume"
-                  width={20}
-                  height={20}
-                /> 
-              }
+          <div className={styles.controlsPartitionOne}>
+            <button className={styles.seekBtn} onClick={() => seekRelative(-5)}>
+              <Image
+                    src='/icons/rewind-backward-5.svg'
+                    alt="Pause"
+                    width={20}
+                    height={20}
+              /> 
             </button>
             
-            <input
-              type="range"
-              min={0}
-              max={1}
-              step={0.01}
-              value={muted ? 0 : volume}
-              className={styles.volumeSlider}
-              onChange={(e) => {
-                const v = Number(e.target.value);
-                setVolume(v);
-                if (v === 0) setMuted(true);
-                else setMuted(false);
-              }}
-            />
+            <div className={styles.volumeControl}>
 
+              <button className={styles.controlBtnIcon} onClick={() => setMuted((m) => !m)}>
+                {muted ? 
+                  <Image
+                    src='/icons/volume-off.svg'
+                    alt="Muted"
+                    width={20}
+                    height={20}
+                  /> 
+                : 
+                  <Image
+                    src='/icons/volume.svg'
+                    alt="Volume"
+                    width={20}
+                    height={20}
+                  /> 
+                }
+              </button>
+              
+              <input
+                type="range"
+                min={0}
+                max={1}
+                step={0.01}
+                value={muted ? 0 : volume}
+                className={styles.volumeSlider}
+                onChange={(e) => {
+                  const v = Number(e.target.value);
+                  setVolume(v);
+                  if (v === 0) setMuted(true);
+                  else setMuted(false);
+                }}
+              />
+
+            </div>
+
+            <button className={styles.seekBtn} onClick={() => seekRelative(5)}>
+              <Image
+                    src='/icons/rewind-forward-5.svg'
+                    alt="Pause"
+                    width={20}
+                    height={20}
+              /> 
+            </button>
+          </div>
+          
+          <div className={styles.controlsPartitionTwo}>
+            
+            <label className="options">
+              <button
+                onClick={ () => setLoop((l) => !l) }
+                className={styles.controlBtnIcon}
+              >
+                
+                {loop ? 
+                  <Image
+                    src='/icons/repeat.svg'
+                    alt="Loop"
+                    width={20}
+                    height={20}
+                  /> 
+                : 
+                  <Image
+                    src='/icons/repeat-off.svg'
+                    alt="No Loop"
+                    width={20}
+                    height={20}
+                  /> 
+                }
+
+              </button>
+            </label>
+
+            <label className={styles.playbackSpeed}>
+              Speed:
+              <select
+                value={playbackRate}
+                onChange={(e) => setPlaybackRate(Number(e.target.value))}
+                className={styles.playbackSelect}
+              >
+                <option value={0.5}>0.5x</option>
+                <option value={0.75}>0.75x</option>
+                <option value={1}>Normal</option>
+                <option value={1.25}>1.25x</option>
+                <option value={1.5}>1.5x</option>
+                <option value={2}>2x</option>
+              </select>
+            </label>
+          
           </div>
 
-          <button className={styles.seekBtn} onClick={() => seekRelative(5)}>
-            <Image
-                  src='/icons/rewind-forward-5.svg'
-                  alt="Pause"
-                  width={20}
-                  height={20}
-            /> 
-          </button>
-
-          <label className="options">
-            <button
-              onClick={ () => setLoop((l) => !l) }
-              className={styles.controlBtnIcon}
-            >
-              
-              {loop ? 
-                <Image
-                  src='/icons/repeat.svg'
-                  alt="Loop"
-                  width={20}
-                  height={20}
-                /> 
-              : 
-                <Image
-                  src='/icons/repeat-off.svg'
-                  alt="No Loop"
-                  width={20}
-                  height={20}
-                /> 
-              }
-
-            </button>
-          </label>
-
-          <label className={styles.playbackSpeed}>
-            Speed:
-            <select
-              value={playbackRate}
-              onChange={(e) => setPlaybackRate(Number(e.target.value))}
-              className={styles.playbackSelect}
-            >
-              <option value={0.5}>0.5x</option>
-              <option value={0.75}>0.75x</option>
-              <option value={1}>Normal</option>
-              <option value={1.25}>1.25x</option>
-              <option value={1.5}>1.5x</option>
-              <option value={2}>2x</option>
-            </select>
-          </label>
         </div>
-          
         {/* Track Info */}  
         <div className={styles.trackDesc}>
           Track Info
