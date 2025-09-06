@@ -144,7 +144,7 @@ export default function Header() {
                         ☰
                     </Button>
                 </div>
-
+                
                 <nav className={`${styles.navbar} ${menuOpen ? styles.open : ""}`}>
                     
                     <Link href="/" className={styles.divText}>
@@ -203,6 +203,7 @@ export default function Header() {
                     </Link>
 
                 </nav>
+                
             </header>
         </>
     );

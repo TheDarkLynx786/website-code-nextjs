@@ -3,21 +3,14 @@
 }
 
 .navbar {
-    
-    
     display: flex;
     justify-self: center;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: #bcb9b9;
     gap: 1rem;
 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-
-    transform: translate(-50%, -50%);
+    position: relative;
 }
 
 /* Spacer to shift layout only at top */
@@ -46,10 +39,16 @@
     transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out;
     transform: translateY(0);
     opacity: 1;
-    display: flex;
-    flex-direction: column;
+    
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
     gap: 1rem;
+    
     height: var(--header-height);
+
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 }
 
 /* Slide in */
@@ -66,6 +65,7 @@
 
 .div {
     display: flex;
+    gap: 0.5rem;
 }
 
 .navbarButton {
@@ -185,7 +185,22 @@
     box-shadow: 0px 0px 5px black;
 }
 
+@media (max-width: 980) {
+    .divText {
+        font-size: 1.3rem;
+    }
+    .siteTitle h1 {
+        font-size: 1.3rem;
+    }
+}
+
+
 @media (max-width: 930px) {
+    .siteTitle h1 {
+        font-size: 1.5rem;
+    }
+    
+    
     .navbar {
         position: relative;
         top: 0;
@@ -195,6 +210,18 @@
         width: 100%;
         z-index: 0;
         transform: translate(0,0);
+    }
+
+    .headerBase {
+          
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        
+        height: var(--header-height);
+
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
     }
 
     .div {
