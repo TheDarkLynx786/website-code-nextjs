@@ -14,6 +14,7 @@ export const postsDirectory = path.join(process.cwd(), 'src', '_content', 'artic
 export function getPostFileNames(dir) {
   let results = [];
   const list = fs.readdirSync(dir);
+  
   list.forEach(file => {
     const filePath = path.join(dir, file);
     const stat = fs.statSync(filePath);
@@ -29,6 +30,7 @@ export function getPostFileNames(dir) {
       results.push({ filename, subfolder, filePath });
     }
   });
+  
   console.log(results);
   return results;
 }

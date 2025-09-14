@@ -1,0 +1,120 @@
+{
+    "armsMafia": {
+        "armsMafia": {
+            "audioSrc": "/music/ArmsMafia/ArmsMafia.wav",
+            
+            "title": "Arms Mafia",
+            "artist": "Lynx",
+            "year": 2025,
+            "genre": "Gangster Rock",
+            
+            "imgSrc": "/images/MusicCovers/ArmsMafia/Arms_Mafia.png/",
+            "imgCaption": "Arms Mafia",
+            
+            "trackInfo": 
+                "Track Info"
+
+        }
+    },
+    
+    "cyberdrive": {
+        "cyberdrive": {
+            "audioSrc": "/music/ArmsMafia/ArmsMafia.wav",
+            
+            "title": "Arms Mafia",
+            "artist": "Lynx",
+            "year": 2025,
+            "genre": "Gangster Rock",
+            
+            "imgSrc": "/images/MusicCovers/ArmsMafia/Arms_Mafia.png/",
+            "imgCaption": "Arms Mafia",
+            
+            "trackInfo": 
+                "Track Info"
+
+        }
+    },
+
+    "elementals": {
+        
+        "bloodlust": {
+            "audioSrc": "/music/ElementalsOST/Bloodlust.mp3",
+            
+            "title": "Bloodlust",
+            "artist": "Lynx",
+            "year": 2024,
+            "genre": "Ambient Metal",
+            
+            "imgSrc": "/images/MusicCovers/ArmsMafia/Arms_Mafia.png/",
+            "imgCaption": "Elementals",
+            
+            "trackInfo": 
+                "Track Info"
+
+        },
+
+        "cataclysm": {
+            "audioSrc": "/music/ElementalsOST/Cataclysm.mp3",
+            
+            "title": "Cataclysm",
+            "artist": "Lynx",
+            "year": 2024,
+            "genre": "Rock",
+            
+            "imgSrc": "/images/MusicCovers/ArmsMafia/Arms_Mafia.png/",
+            "imgCaption": "Elementals",
+            
+            "trackInfo": 
+                "Track Info"
+
+        },
+
+        "lobby": {
+            "audioSrc": "/music/ElementalsOST/Lobby.mp3",
+            
+            "title": "Lobby",
+            "artist": "Lynx",
+            "year": 2024,
+            "genre": "Ambient",
+            
+            "imgSrc": "/images/MusicCovers/ArmsMafia/Arms_Mafia.png/",
+            "imgCaption": "Elementals",
+            
+            "trackInfo": 
+                "Track Info"
+
+        },
+
+        "deadlyCurrent": {
+            "audioSrc": "/music/ElementalsOST/DeadlyCurrent.mp3",
+            
+            "title": "Deadly Current",
+            "artist": "Lynx",
+            "year": 2024,
+            "genre": "Electronic",
+            
+            "imgSrc": "/images/MusicCovers/ArmsMafia/Arms_Mafia.png/",
+            "imgCaption": "Elementals",
+            
+            "trackInfo": 
+                "Track Info"
+
+        },
+
+        "shop": {
+            "audioSrc": "/music/ElementalsOST/Shop.mp3",
+            
+            "title": "Shop Theme",
+            "artist": "Lynx",
+            "year": 2024,
+            "genre": "Ambient",
+            
+            "imgSrc": "/images/MusicCovers/ArmsMafia/Arms_Mafia.png/",
+            "imgCaption": "Elementals",
+            
+            "trackInfo": 
+                "Track Info"
+
+        }
+    }
+}

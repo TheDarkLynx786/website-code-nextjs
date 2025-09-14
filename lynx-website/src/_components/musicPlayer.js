@@ -5,7 +5,7 @@ import Card from './card';
 import Image from 'next/image';
 import styles from '@/styles/musicPlayer.module.css';
 
-export default function CustomMusicPlayer({ src, title = "Untitled", artist = "Unknown"}) {
+export default function MusicPlayer({ audioSrc, title = "Untitled", artist = "Unknown", year = "0000", genre = "Unknown", imgSrc = "/", imgCaption = "Unknown", trackInfo = "No Info" }) {
   const audioRef = useRef(null);
   const progressRef = useRef(null);
   const canvasRef = useRef(null);
@@ -34,12 +34,16 @@ export default function CustomMusicPlayer({ src, title = "Untitled", artist = "U
     audio.addEventListener("loadedmetadata", onLoaded);
     audio.addEventListener("ended", onEnded);
 
+    if (audio.duration && isFinite(audio.duration)) {
+      setDuration(audio.duration);
+    }
+
     return () => {
       audio.removeEventListener("timeupdate", onTimeUpdate);
       audio.removeEventListener("loadedmetadata", onLoaded);
       audio.removeEventListener("ended", onEnded);
     };
-  }, [src]);
+  }, [audioSrc]);
 
   useEffect(() => {
     if (audioRef.current) audioRef.current.volume = volume;
@@ -161,20 +165,20 @@ export default function CustomMusicPlayer({ src, title = "Untitled", artist = "U
       <div className={styles.coverAndVisualizer}>
         <div>
           <Image 
-            src='/images/fourhorsemen/FourHorsemen.jpg'
+            src={imgSrc}
             alt='Track Cover'
             width={250}
             height={250}
             className={styles.trackCover}
           />
-          <h3 className={styles.coverCaption}>Four Horsemen</h3>
+          <h3 className={styles.coverCaption}>{imgCaption}</h3>
         </div>
 
         {/* Audio Visualizer Canvas */}
         <canvas ref={canvasRef} width={300} height={60} className={styles.visualizer} />
       </div>
 
-      <audio ref={audioRef} src={src} preload="metadata" />
+      <audio ref={audioRef} src={audioSrc} preload="metadata" />
 
       {/* Track Info */}
       <div className={styles.trackInfoDiv}>
@@ -182,7 +186,7 @@ export default function CustomMusicPlayer({ src, title = "Untitled", artist = "U
           <div className={styles.trackTitle}>{title}</div>
           <div className={styles.trackArtist}>{artist}</div>
           <div className={styles.trackDateGenre}>
-            <span>2025</span> | <span>Grunge</span>
+            <span>{year}</span> | <span>{genre}</span>
           </div>
         </div>
         
@@ -336,7 +340,7 @@ export default function CustomMusicPlayer({ src, title = "Untitled", artist = "U
         </div>
         {/* Track Info */}  
         <div className={styles.trackDesc}>
-          Track Info
+          {trackInfo}
         </div>
       
       </div>
