@@ -8,7 +8,11 @@ export default async function Music() {
   console.log(album);
 
   const albumName = "Elementals";
-  const albumInfo = "Album Info"
+  const albumArtist = "Lynx";
+  const albumInfo = "Album Info";
+  const albumYear = 2025;
+  const albumGenre = "OST";
+  
 
   return (
     <div className={styles.page}>
@@ -17,7 +21,7 @@ export default async function Music() {
         Music Player Demo
       </h1>
 
-      <AlbumContainer albumName={albumName} albumInfo={albumInfo} album={album}/>
+      <AlbumContainer albumName={albumName} albumArtist={albumArtist} albumYear={albumYear} albumGenre={albumGenre} albumInfo={albumInfo} album={album}/>
           
     </div>
   );

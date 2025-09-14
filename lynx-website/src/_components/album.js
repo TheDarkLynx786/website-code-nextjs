@@ -2,26 +2,26 @@ import MusicPlayer from './musicPlayer';
 import styles from '@/styles/album.module.css';
 
 
-export default function AlbumContainer({ albumName, albumInfo, album }) {
+export default function AlbumContainer({ albumName, albumArtist, albumYear, albumGenre, albumInfo, album }) {
     
-    
+    const trackDict = album['tracks'];
 
-    const tracks = Object.keys(album).map(track => {
+    const tracks = Object.keys(trackDict).map(track => {
         return ( 
             <MusicPlayer             
-                key={album[track]["audioSrc"]}
+                key={trackDict[track]["audioSrc"]}
                 
-                audioSrc={album[track]["audioSrc"]}
+                audioSrc={trackDict[track]["audioSrc"]}
                 
-                title={album[track]["title"]}
-                artist={album[track]["artist"]}
-                year={album[track]["year"]}
-                genre={album[track]["genre"]}
+                title={trackDict[track]["title"]}
+                artist={trackDict[track]["artist"]}
+                year={trackDict[track]["year"]}
+                genre={trackDict[track]["genre"]}
                 
-                imgSrc={album[track]["imgSrc"]}
-                imgCaption={album[track]["imgCaption"]}
+                imgSrc={trackDict[track]["imgSrc"]}
+                imgCaption={trackDict[track]["imgCaption"]}
                 
-                trackInfo={album[track]["trackInfo"]}
+                trackInfo={trackDict[track]["trackInfo"]}
             />
         );
     });
@@ -29,9 +29,10 @@ export default function AlbumContainer({ albumName, albumInfo, album }) {
     
     return (
         <div className={styles.albumDiv}>
-            <h1>{albumName}</h1>
-
-            <p>{albumInfo}</p>
+            <h1 className={styles.albumTitle}>{albumName}</h1>
+            <h2 className={styles.albumArtist}>{albumArtist}</h2>
+            <h2 className={styles.albumYearGenre}>{albumYear} | {albumGenre} </h2>
+            <p className={styles.albumInfo}>{albumInfo}</p>
             
             {tracks}
         </div>

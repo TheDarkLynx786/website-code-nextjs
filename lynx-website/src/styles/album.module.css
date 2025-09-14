@@ -12,3 +12,31 @@
 
     border-radius: 20px;
 }
+
+.albumTitle {
+    font-family: 'DejaVu Sans Mono', monospace;
+    font-size: 4rem;
+    color: #000000;
+    text-align: left;
+}
+
+.albumArtist {
+    font-family: 'DejaVu Sans Mono', monospace;
+    font-size: 3rem;
+    color: #484747;
+    text-align: left;
+}
+
+.albumYearGenre {
+    font-family: 'DejaVu Sans Mono', monospace;
+    font-size: 2rem;
+    color: #484747;
+    text-align: left;
+}
+
+.albumInfo {
+    font-family: 'Lora', serif;
+    font-size: 1.4rem;
+    color: #484747;
+    text-align: left;
+}
