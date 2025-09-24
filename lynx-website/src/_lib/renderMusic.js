@@ -1,5 +1,22 @@
 import musicInfo from '../_content/musicInfo.json';
 
-export default function fetchMusicInfo() {
-    return musicInfo;
+// For a given album, returns the album metadata.
+export default function getAlbum( album ) {
+    const album = musicInfo[album]
+
+    const albumName = album["albumTitle"];
+    const albumArtist = album["albumArtist"];
+    const albumInfo = album["albumInfo"];
+    const albumYear = album["albumYear"];
+    const albumGenre = album["albumGenre"];
+    
+    return(
+        {
+            albumName,
+            albumArtist,
+            albumInfo,
+            albumYear,
+            albumGenre,
+        }
+    );
 }

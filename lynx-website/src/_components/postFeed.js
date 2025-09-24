@@ -5,7 +5,7 @@ import cardStyles from '@/styles/card.module.css'
 import Link from 'next/link';
 import Card from './card';
 import Image from 'next/image';
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import { formatDateWithSuffix } from '@/_lib/dateUtils';
 import { usePathname } from 'next/navigation';
 import { parseStaticPathsResult } from 'next/dist/lib/fallback';

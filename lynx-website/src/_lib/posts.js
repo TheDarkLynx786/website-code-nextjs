@@ -31,7 +31,6 @@ export function getPostFileNames(dir) {
     }
   });
   
-  console.log(results);
   return results;
 }
 

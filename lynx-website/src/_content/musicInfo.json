@@ -7,7 +7,9 @@
         "albumGenre": "Gangster Rock",
         "albumInfo": "Album Info",
         
-        "track": {
+        "musicSlug": "arms-mafia",
+        
+        "tracks": {
             "armsMafia": {
                 "audioSrc": "/music/ArmsMafia/ArmsMafia.wav",
                 
@@ -16,7 +18,7 @@
                 "year": 2025,
                 "genre": "Gangster Rock",
                 
-                "imgSrc": "/images/MusicCovers/ArmsMafia/Arms_Mafia.png/",
+                "imgSrc": "/images/MusicCovers/ArmsMafia/Arms_Mafia.png",
                 "imgCaption": "Arms Mafia",
                 
                 "trackInfo": 
@@ -28,23 +30,25 @@
     
     "cyberdrive": {
         
-        "albumTitle": "Arms Mafia",
+        "albumTitle": "Cyberdrive",
         "albumArtist": "Lynx",
         "albumYear": 2025,
-        "albumGenre": "Gangster Rock",
-        "albumInfo": "Album Info",
+        "albumGenre": "Ambient",
+        "albumInfo": "BandLab Primer Track",
+        
+        "musicSlug": "cyberdrive",
         
         "tracks": {
             "cyberdrive": {
-                "audioSrc": "/music/ArmsMafia/ArmsMafia.wav",
+                "audioSrc": "/music/Cyberdrive/Cyberdrive.wav",
                 
-                "title": "Arms Mafia",
+                "title": "Cyberdrive",
                 "artist": "Lynx",
                 "year": 2025,
-                "genre": "Gangster Rock",
+                "genre": "Ambient",
                 
-                "imgSrc": "/images/MusicCovers/ArmsMafia/Arms_Mafia.png/",
-                "imgCaption": "Arms Mafia",
+                "imgSrc": "/images/MusicCovers/Cyberdrive/Cyberdrive.png",
+                "imgCaption": "Cyberdrive",
                 
                 "trackInfo": 
                     "Track Info"
@@ -55,11 +59,13 @@
 
     "elementals": {
         
-        "albumTitle": "Arms Mafia",
+        "albumTitle": "Elementals OST",
         "albumArtist": "Lynx",
-        "albumYear": 2025,
-        "albumGenre": "Gangster Rock",
-        "albumInfo": "Album Info",
+        "albumYear": 2023,
+        "albumGenre": "OST",
+        "albumInfo": "The OST for an unfinished game jam game.",
+
+        "musicSlug": "elementals-ost",
 
         "tracks": {
             "bloodlust": {
@@ -70,7 +76,7 @@
                 "year": 2024,
                 "genre": "Ambient Metal",
                 
-                "imgSrc": "/images/MusicCovers/ArmsMafia/Arms_Mafia.png/",
+                "imgSrc": "/images/MusicCovers/ArmsMafia/Arms_Mafia.png",
                 "imgCaption": "Elementals",
                 
                 "trackInfo": 
@@ -86,7 +92,7 @@
                 "year": 2024,
                 "genre": "Rock",
                 
-                "imgSrc": "/images/MusicCovers/ArmsMafia/Arms_Mafia.png/",
+                "imgSrc": "/images/MusicCovers/ArmsMafia/Arms_Mafia.png",
                 "imgCaption": "Elementals",
                 
                 "trackInfo": 
@@ -95,14 +101,14 @@
             },
 
             "lobby": {
-                "audioSrc": "/music/ElementalsOST/Lobby.mp3",
+                "audioSrc": "/music/ElementalsOST/Lobby.wav",
                 
                 "title": "Lobby",
                 "artist": "Lynx",
                 "year": 2024,
                 "genre": "Ambient",
                 
-                "imgSrc": "/images/MusicCovers/ArmsMafia/Arms_Mafia.png/",
+                "imgSrc": "/images/MusicCovers/ArmsMafia/Arms_Mafia.png",
                 "imgCaption": "Elementals",
                 
                 "trackInfo": 
@@ -118,7 +124,7 @@
                 "year": 2024,
                 "genre": "Electronic",
                 
-                "imgSrc": "/images/MusicCovers/ArmsMafia/Arms_Mafia.png/",
+                "imgSrc": "/images/MusicCovers/ArmsMafia/Arms_Mafia.png",
                 "imgCaption": "Elementals",
                 
                 "trackInfo": 
@@ -134,7 +140,7 @@
                 "year": 2024,
                 "genre": "Ambient",
                 
-                "imgSrc": "/images/MusicCovers/ArmsMafia/Arms_Mafia.png/",
+                "imgSrc": "/images/MusicCovers/ArmsMafia/Arms_Mafia.png",
                 "imgCaption": "Elementals",
                 
                 "trackInfo": 

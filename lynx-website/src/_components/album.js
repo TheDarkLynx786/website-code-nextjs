@@ -4,7 +4,9 @@ import styles from '@/styles/album.module.css';
 
 export default function AlbumContainer({ albumName, albumArtist, albumYear, albumGenre, albumInfo, album }) {
     
-    const trackDict = album['tracks'];
+    const trackDict = album.tracks;
+
+    console.log( trackDict );
 
     const tracks = Object.keys(trackDict).map(track => {
         return ( 
