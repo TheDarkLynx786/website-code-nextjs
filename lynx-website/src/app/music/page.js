@@ -8,7 +8,7 @@ export default async function MusicMain() {
 
   
   return (
-    <div className={styles.page}>
+    <div className={styles.mainPage}>
       <MusicDisplay />
     </div>
   );

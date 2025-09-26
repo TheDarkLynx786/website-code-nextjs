@@ -5,7 +5,6 @@ import Card from "./card";
 import Link from "next/link"
 import Image from "next/image";
 import { useState, useEffect } from 'react';
-import { formatDateWithSuffix } from '@/_lib/dateUtils';
 import { usePathname } from 'next/navigation';
 import musicInfo from '@/_content/musicInfo.json';
 
@@ -48,23 +47,55 @@ export default function MusicDisplay() {
         const album = musicInfo[album_iter]
 
         const albumName = album["albumTitle"];
+        const albumCover = album["albumCover"];
         const albumArtist = album["albumArtist"];
-        const albumInfo = album["albumInfo"];
         const albumYear = album["albumYear"];
         const albumGenre = album["albumGenre"];
         const musicSlug = album["musicSlug"]
 
         // DEBUG
-        console.log(albumArtist, " ", albumName, " ", albumInfo, " ", albumYear, " ", albumGenre);
+        console.log(albumArtist, " ", albumName, "\n", albumCover, "\n", albumYear, albumGenre);
 
         const key = albumName + albumYear;
 
         console.log(album);
+        
+        // Year Format
+        const date =
+        <div className={styles.metaInfoDiv}>
+            <Image
+            src={'/icons/calendar-time.svg'}
+            alt="Calendar Icon"
+            width={24}
+            height={24}
+            className={styles.metaInfoIcon}
+            />
+            <h2 className={styles.metaInfoText}> {albumYear} </h2>
+        </div>;
+
+        // Genre Format
+        const genre =
+        <div className={styles.metaInfoDiv}>
+            <Image
+            src={'/icons/music.svg'}
+            alt="Calendar Icon"
+            width={24}
+            height={24}
+            className={styles.metaInfoIcon}
+            />
+            <h2 className={styles.metaInfoText}> {albumGenre} </h2>
+        </div>;
+
+        const dtGenre =
+        <div className={styles.metaInfo}>
+            {date} <h2 className={styles.metaInfoText}> | </h2> {genre}
+        </div>;
 
         return ( 
-            <Card key={key} cardStyle={`${styles.card} ${styles.musicDisplayCard}`} wrapperStyle={`${styles.musicDisplayWrapper}`} href={`/music/${musicSlug}`}  >
-                <h2 className={styles.postTitle}>{albumName}</h2>
-                <p className={styles.postDesc}>{albumArtist}</p>
+            <Card key={key} cardStyle={`${styles.card} ${styles.musicDisplayCard}`} wrapperStyle={`${styles.musicDisplayWrapper}`} href={`/music/${musicSlug}`} img={albumCover} >
+                <h2 className={styles.albumTitle}>{albumName}</h2>
+                <p className={styles.albumArtist}>{albumArtist}</p>
+                {dtGenre}
             </Card>
         );
     
@@ -72,7 +103,9 @@ export default function MusicDisplay() {
 
     return (
         <div className={styles.musicDisplayContainer}>
+            <h1 className={styles.musicDisplayHeader}>BeepBox/Jummbox Tracks</h1>
             <div className={styles.musicDisplay}>    
+                
                 {albumCards}
             </div>
         </div>

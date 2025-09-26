@@ -1,6 +1,7 @@
 {
     "armsMafia": {
         
+        "albumCover": "/images/MusicCovers/ArmsMafia/Arms_Mafia.png",
         "albumTitle": "Arms Mafia",
         "albumArtist": "Lynx",
         "albumYear": 2025,
@@ -30,6 +31,7 @@
     
     "cyberdrive": {
         
+        "albumCover": "/images/MusicCovers/Cyberdrive/Cyberdrive.png",
         "albumTitle": "Cyberdrive",
         "albumArtist": "Lynx",
         "albumYear": 2025,
@@ -59,6 +61,7 @@
 
     "elementals": {
         
+        "albumCover": "/images/MusicCovers/ArmsMafia/Arms_Mafia.png",
         "albumTitle": "Elementals OST",
         "albumArtist": "Lynx",
         "albumYear": 2023,
