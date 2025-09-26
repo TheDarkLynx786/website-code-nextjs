@@ -103,7 +103,7 @@ export default function MusicDisplay() {
 
     return (
         <div className={styles.musicDisplayContainer}>
-            <h1 className={styles.musicDisplayHeader}>BeepBox/Jummbox Tracks</h1>
+            <h1 className={styles.musicDisplayHeader}>My Music:</h1>
             <div className={styles.musicDisplay}>    
                 
                 {albumCards}
