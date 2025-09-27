@@ -3,7 +3,7 @@
 import styles from "@/styles/heroContact.module.css"
 import cardStyles from "@/styles/card.module.css"
 import Card from "./card";
-import NodeCanvas from "@/_components/nodeCanvas";
+import MusicCanvas from "@/_components/musicCanvas";
 import Image from "next/image";
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from 'framer-motion';
@@ -86,7 +86,7 @@ export default function Hero() {
 
     return(
         <div className={styles.heroContainer}>
-            <NodeCanvas>
+            <MusicCanvas>
                 <Card cardStyle={`${cardStyles.card} ${styles.heroCard}`} wrapperStyle={styles.heroWrapper}>
                     <div className={styles.textButtonDiv}>
                             <h1 className={styles.heroTextTitle}>
@@ -103,7 +103,7 @@ export default function Hero() {
                     </div>    
                     {image}
                 </Card>
-            </NodeCanvas>
+            </MusicCanvas>
         </div>
     );
 }

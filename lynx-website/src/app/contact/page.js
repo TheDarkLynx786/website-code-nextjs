@@ -10,6 +10,7 @@ export default async function Contact() {
   return (
     <>
       <HeroContact />
+      
       <div className={styles.contactFormContainer}>
         <form action="#" id="form" className={styles.contactForm}>
 

@@ -31,9 +31,6 @@ export default async function MusicPage( {params} ) {
   const albumYear = album["albumYear"];
   const albumGenre = album["albumGenre"];
 
-  // DEBUG
-  console.log(albumArtist, " ", albumName, " ", albumInfo, " ", albumYear, " ", albumGenre);
-
   const key = albumName + albumYear;
 
   return ( 

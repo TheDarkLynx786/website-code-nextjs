@@ -53,9 +53,6 @@ export default function MusicDisplay() {
         const albumGenre = album["albumGenre"];
         const musicSlug = album["musicSlug"]
 
-        // DEBUG
-        console.log(albumArtist, " ", albumName, "\n", albumCover, "\n", albumYear, albumGenre);
-
         const key = albumName + albumYear;
 
         console.log(album);

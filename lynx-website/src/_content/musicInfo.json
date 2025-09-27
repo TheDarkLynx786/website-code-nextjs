@@ -151,5 +151,84 @@
 
             }
         }
+    },
+
+    "fourhorsemen": {
+        
+        "albumCover": "/images/MusicCovers/FourHorsemen/FourHorsemen.jpg",
+        "albumTitle": "Four Horsemen",
+        "albumArtist": "Lynx",
+        "albumYear": 2024,
+        "albumGenre": "Metal",
+        "albumInfo": "A metal album surrounding the Four Horsemen of the Apocalypse.",
+
+        "musicSlug": "four-horsemen",
+
+        "tracks": {
+            "war": {
+                "audioSrc": "/music/ElementalsOST/Bloodlust.mp3",
+                
+                "title": "Bloodlust",
+                "artist": "Lynx",
+                "year": 2024,
+                "genre": "Ambient Metal",
+                
+                "imgSrc": "/images/MusicCovers/ArmsMafia/Arms_Mafia.png",
+                "imgCaption": "Elementals",
+                
+                "trackInfo": 
+                    "Track Info"
+
+            },
+
+            "pestilence": {
+                "audioSrc": "/music/ElementalsOST/Cataclysm.mp3",
+                
+                "title": "Cataclysm",
+                "artist": "Lynx",
+                "year": 2024,
+                "genre": "Rock",
+                
+                "imgSrc": "/images/MusicCovers/ArmsMafia/Arms_Mafia.png",
+                "imgCaption": "Elementals",
+                
+                "trackInfo": 
+                    "Track Info"
+
+            },
+
+            "famine": {
+                "audioSrc": "/music/ElementalsOST/Lobby.wav",
+                
+                "title": "Lobby",
+                "artist": "Lynx",
+                "year": 2024,
+                "genre": "Ambient",
+                
+                "imgSrc": "/images/MusicCovers/ArmsMafia/Arms_Mafia.png",
+                "imgCaption": "Elementals",
+                
+                "trackInfo": 
+                    "Track Info"
+
+            },
+
+            "death": {
+                "audioSrc": "/music/ElementalsOST/DeadlyCurrent.mp3",
+                
+                "title": "Deadly Current",
+                "artist": "Lynx",
+                "year": 2024,
+                "genre": "Electronic",
+                
+                "imgSrc": "/images/MusicCovers/ArmsMafia/Arms_Mafia.png",
+                "imgCaption": "Elementals",
+                
+                "trackInfo": 
+                    "Track Info"
+
+            }
+
+        }
     }
 }
