@@ -80,13 +80,13 @@ function imagePerspective() {
     )
 }
 
-export default function Hero() {
+export default function Hero({track}) {
     const text = hoverText();
     const image = imagePerspective();
 
     return(
         <div className={styles.heroContainer}>
-            <MusicCanvas>
+            <MusicCanvas track={track} >
                 <Card cardStyle={`${cardStyles.card} ${styles.heroCard}`} wrapperStyle={styles.heroWrapper}>
                     <div className={styles.textButtonDiv}>
                             <h1 className={styles.heroTextTitle}>

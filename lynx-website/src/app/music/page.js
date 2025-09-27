@@ -11,10 +11,10 @@ export default async function MusicMain() {
   
   return (
     <>
-      <HeroMusic />
+      <HeroMusic track={peaksPerChannel} />
       <div className={styles.mainPage}>
         
-        <MusicDisplay track = { peaksPerChannel } />
+        <MusicDisplay track={peaksPerChannel} />
       </div>
     </>
   );
