@@ -40,3 +40,77 @@
     color: #484747;
     text-align: left;
 }
+
+@media (max-width: 980px) {
+    
+}
+
+@media (max-width: 700px) {
+    .albumTitle {
+        font-size: 3rem;
+    }
+
+    .albumArtist {
+        font-size: 2rem;
+    }
+
+    .albumYearGenre {
+        font-size: 1.2rem;
+    }
+
+    .albumInfo {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 545px) {
+    .albumTitle {
+        font-size: 2.5rem;
+    }
+
+    .albumArtist {
+        font-size: 1.4rem;
+    }
+
+    .albumYearGenre {
+        font-size: 1rem;
+    }
+
+    .albumInfo {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 475px) {
+    
+    .albumDiv {
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 300px;
+
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        justify-content: center;
+        padding: 1.5rem;
+        gap: 0.5rem;
+
+        border-radius: 20px;
+    }
+    
+    .albumTitle {
+        font-size: 2rem;
+    }
+
+    .albumArtist {
+        font-size: 1.3rem;
+    }
+
+    .albumYearGenre {
+        font-size: 1rem;
+    }
+
+    .albumInfo {
+        font-size: 0.9rem;
+    }
+}

@@ -88,13 +88,14 @@ export default function Header() {
 
     useEffect(() => {
         let ticking = false;
+        setMenuOpen(false);
 
         const handleScroll = () => {
             const currentY = window.scrollY;
 
             if (!ticking) {
                 window.requestAnimationFrame(() => {
-                    const isAtTop = currentY <= 10;
+                    const isAtTop = currentY <= 3;
                     if (isAtTop !== atTop) setAtTop(isAtTop);
 
                     const delta = currentY - lastScrollY;
