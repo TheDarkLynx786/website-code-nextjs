@@ -2,10 +2,8 @@
 
 import styles from "@/styles/musicDisplay.module.css"
 import Card from "./card";
-import Link from "next/link"
 import Image from "next/image";
 import { useState, useEffect } from 'react';
-import { usePathname } from 'next/navigation';
 import musicInfo from '@/_content/musicInfo.json';
 
 // I am in CS class right now
@@ -17,9 +15,10 @@ import musicInfo from '@/_content/musicInfo.json';
 export default function MusicDisplay() {
     
     // In this context, albums are dictionaries with album metadata
-    
-    const pathname = usePathname();
     const album_list = Object.keys(musicInfo);
+
+    // By-year sorting
+    album_list.sort( (a, b) => musicInfo[a].albumYear - musicInfo[b].albumYear);
 
     // Page Check for page-specific rendering
 
@@ -102,7 +101,6 @@ export default function MusicDisplay() {
         <div className={styles.musicDisplayContainer}>
             <h1 className={styles.musicDisplayHeader}>My Music:</h1>
             <div className={styles.musicDisplay}>    
-                
                 {albumCards}
             </div>
         </div>
