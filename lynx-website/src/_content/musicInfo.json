@@ -1,4 +1,50 @@
 {
+    "appleLad": {
+        
+        "albumCover": "/images/MusicCovers/Placeholder.png",
+        "albumTitle": "Apple Lad OST",
+        "albumArtist": "Lynx",
+        "albumYear": 2023,
+        "albumGenre": "OST",
+        "albumInfo": "Soundtrack for a friend's game.",
+        
+        "musicSlug": "apple-lad",
+        
+        "tracks": {
+            "appleLadMenu": {
+                "audioSrc": "/music/AppleLad/AppleLadMenu.mp3",
+                
+                "title": "Apple Lad Menu",
+                "artist": "Lynx",
+                "year": 2023,
+                "genre": "OST",
+                
+                "imgSrc": "/images/MusicCovers/Placeholder.png",
+                "imgCaption": "Apple Lad",
+                
+                "trackInfo": 
+                    "Track Info"
+
+            },
+
+            "thirdworldapplepicking": {
+                "audioSrc": "/music/AppleLad/Third-World_ApplePicking.mp3",
+                
+                "title": "Third-World Apple Picking",
+                "artist": "Lynx",
+                "year": 2023,
+                "genre": "OST",
+                
+                "imgSrc": "/images/MusicCovers/Placeholder.png",
+                "imgCaption": "Apple Lad",
+                
+                "trackInfo": 
+                    "Track Info"
+
+            }
+        }
+    },
+    
     "armsMafia": {
         
         "albumCover": "/images/MusicCovers/ArmsMafia/Arms_Mafia.png",
@@ -60,6 +106,99 @@
         }
     },
 
+    "constellations": {
+        
+        "albumCover": "/images/MusicCovers/Placeholder.png",
+        "albumTitle": "Constellations",
+        "albumArtist": "Lynx",
+        "albumYear": 2025,
+        "albumGenre": "Ethereal",
+        "albumInfo": "Atmospheric Chill Track",
+
+        "musicSlug": "constellations",
+
+        "tracks": {
+            "constellations": {
+                "audioSrc": "/music/Constellations/Constellations.mp3",
+                
+                "title": "Constellations",
+                "artist": "Lynx",
+                "year": 2025,
+                "genre": "Ethereal",
+                
+                "imgSrc": "/images/MusicCovers/Placeholder.png",
+                "imgCaption": "Image Caption",
+                
+                "trackInfo": 
+                    "Track Info"
+
+            }
+
+        }
+    },
+
+    "corporateCrusade": {
+        
+        "albumCover": "/images/MusicCovers/CorporateCrusade/CorporateCrusade.png",
+        "albumTitle": "Corporate Crusade",
+        "albumArtist": "Lynx",
+        "albumYear": 2024,
+        "albumGenre": "OST",
+        "albumInfo": "OST for an unfinished shooter game.",
+
+        "musicSlug": "corporate-crusade",
+
+        "tracks": {
+            "corporatecrusade": {
+                "audioSrc": "/music/CorporateCrusade/CorporateCrusade.mp3",
+                
+                "title": "Corporate Crusade",
+                "artist": "Lynx",
+                "year": 2024,
+                "genre": "OST",
+                
+                "imgSrc": "/images/MusicCovers/CorporateCrusade/CorporateCrusade.png",
+                "imgCaption": "Image Caption",
+                
+                "trackInfo": 
+                    "Track Info"
+
+            },
+
+            "placedOnHold": {
+                "audioSrc": "/music/CorporateCrusade/PlacedOnHold.mp3",
+                
+                "title": "Placed On Hold",
+                "artist": "Lynx",
+                "year": 2024,
+                "genre": "OST",
+                
+                "imgSrc": "/images/MusicCovers/CorporateCrusade/CorporateCrusade.png",
+                "imgCaption": "Image Caption",
+                
+                "trackInfo": 
+                    "Track Info"
+
+            },
+
+            "dialDisruption": {
+                "audioSrc": "/music/CorporateCrusade/DialDisruption.mp3",
+                
+                "title": "Dial Disruption",
+                "artist": "Lynx",
+                "year": 2024,
+                "genre": "OST",
+                
+                "imgSrc": "/images/MusicCovers/CorporateCrusade/CorporateCrusade.png",
+                "imgCaption": "Image Caption",
+                
+                "trackInfo": 
+                    "Track Info"
+
+            }
+        }
+    },
+
     "cyberdrive": {
         
         "albumCover": "/images/MusicCovers/Cyberdrive/Cyberdrive.png",
@@ -92,7 +231,7 @@
 
     "elementals": {
         
-        "albumCover": "/images/MusicCovers/ArmsMafia/Arms_Mafia.png",
+        "albumCover": "/images/MusicCovers/Placeholder.png",
         "albumTitle": "Elementals OST",
         "albumArtist": "Lynx",
         "albumYear": 2023,
@@ -110,7 +249,7 @@
                 "year": 2024,
                 "genre": "Ambient Metal",
                 
-                "imgSrc": "/images/MusicCovers/ArmsMafia/Arms_Mafia.png",
+                "imgSrc": "/images/MusicCovers/Placeholder.png",
                 "imgCaption": "Elementals",
                 
                 "trackInfo": 
@@ -126,7 +265,7 @@
                 "year": 2024,
                 "genre": "Rock",
                 
-                "imgSrc": "/images/MusicCovers/ArmsMafia/Arms_Mafia.png",
+                "imgSrc": "/images/MusicCovers/Placeholder.png",
                 "imgCaption": "Elementals",
                 
                 "trackInfo": 
@@ -142,7 +281,7 @@
                 "year": 2024,
                 "genre": "Ambient",
                 
-                "imgSrc": "/images/MusicCovers/ArmsMafia/Arms_Mafia.png",
+                "imgSrc": "/images/MusicCovers/Placeholder.png",
                 "imgCaption": "Elementals",
                 
                 "trackInfo": 
@@ -158,7 +297,7 @@
                 "year": 2024,
                 "genre": "Electronic",
                 
-                "imgSrc": "/images/MusicCovers/ArmsMafia/Arms_Mafia.png",
+                "imgSrc": "/images/MusicCovers/Placeholder.png",
                 "imgCaption": "Elementals",
                 
                 "trackInfo": 
@@ -174,8 +313,100 @@
                 "year": 2024,
                 "genre": "Ambient",
                 
-                "imgSrc": "/images/MusicCovers/ArmsMafia/Arms_Mafia.png",
+                "imgSrc": "/images/MusicCovers/Placeholder.png",
                 "imgCaption": "Elementals",
+                
+                "trackInfo": 
+                    "Track Info"
+
+            }
+        }
+    },
+
+    "etherealWanderer": {
+        
+        "albumCover": "/images/MusicCovers/Placeholder.png",
+        "albumTitle": "Ethereal Wanderer",
+        "albumArtist": "Lynx",
+        "albumYear": 2024,
+        "albumGenre": "Ethereal",
+        "albumInfo": "Album Info",
+        
+        "musicSlug": "ethereal-wanderer",
+        
+        "tracks": {
+            "etherealwanderer": {
+                "audioSrc": "/music/EtherealWanderer/EtherealWanderer.mp3",
+                
+                "title": "Ethereal Wanderer",
+                "artist": "Lynx",
+                "year": 2024,
+                "genre": "Ethereal",
+                
+                "imgSrc": "/images/MusicCovers/Placeholder.png",
+                "imgCaption": "Caption",
+                
+                "trackInfo": 
+                    "Inspired by SeeTheColors - LiloSound"
+
+            }
+        }
+    },
+
+    "experiments": {
+        
+        "albumCover": "/images/MusicCovers/Experiments/Experiments.jpeg",
+        "albumTitle": "Experiments",
+        "albumArtist": "Lynx",
+        "albumYear": 2023,
+        "albumGenre": "N/A",
+        "albumInfo": "A bunch of experiment tracks I developed when I started composing",
+
+        "musicSlug": "experiments",
+
+        "tracks": {
+            "beepboxbop1": {
+                "audioSrc": "/music/Experiments/BeepBoxBop1.mp3",
+                
+                "title": "BeepBoxBop1",
+                "artist": "Lynx",
+                "year": 2023,
+                "genre": "Video Game",
+                
+                "imgSrc": "/images/MusicCovers/Experiments/EightNote.png",
+                "imgCaption": "Experiments",
+                
+                "trackInfo": 
+                    "Track Info"
+
+            },
+
+            "cminorbeepbox": {
+                "audioSrc": "/music/Experiments/CMinorBeepBox.mp3",
+                
+                "title": "C Minor BeepBox",
+                "artist": "Lynx",
+                "year": 2023,
+                "genre": "Chiptune",
+                
+                "imgSrc": "/images/MusicCovers/Experiments/CMinor.png",
+                "imgCaption": "Experiments",
+                
+                "trackInfo": 
+                    "Track Info"
+
+            },
+
+            "suchshop": {
+                "audioSrc": "/music/Experiments/SuchShop.mp3",
+                
+                "title": "Such Shop",
+                "artist": "Lynx",
+                "year": 2023,
+                "genre": "Video Game",
+                
+                "imgSrc": "/images/MusicCovers/Experiments/SuchShop.png",
+                "imgCaption": "Experiments",
                 
                 "trackInfo": 
                     "Track Info"
@@ -263,10 +494,40 @@
         }
     },
 
+    "overscorch": {
+        
+        "albumCover": "/images/MusicCovers/Placeholder.png",
+        "albumTitle": "OverScorch",
+        "albumArtist": "Lynx",
+        "albumYear": 2024,
+        "albumGenre": "Electronic",
+        "albumInfo": "Album Info",
+        
+        "musicSlug": "overscorch",
+        
+        "tracks": {
+            "overscorch": {
+                "audioSrc": "/music/OverScorch/OverScorch.wav",
+                
+                "title": "OverScorch",
+                "artist": "Lynx",
+                "year": 2024,
+                "genre": "Electronic",
+                
+                "imgSrc": "/images/MusicCovers/Placeholder.png",
+                "imgCaption": "Caption",
+                
+                "trackInfo": 
+                    "Inspired by Deadly Current - Elementals OST"
+
+            }
+        }
+    },
+
     "ozymandias": {
         
         "albumCover": "/images/MusicCovers/Ozymandias/Ozymandias.png",
-        "albumTitle": "Ozymandis",
+        "albumTitle": "Ozymandias",
         "albumArtist": "Lynx",
         "albumYear": 2024,
         "albumGenre": "Dramatic",
@@ -292,5 +553,147 @@
             }
 
         }
+    },
+
+    "reminiscence": {
+        
+        "albumCover": "/images/MusicCovers/Placeholder.png",
+        "albumTitle": "Reminiscence",
+        "albumArtist": "Lynx",
+        "albumYear": 2025,
+        "albumGenre": "Rock",
+        "albumInfo": "Album Info",
+        
+        "musicSlug": "reminiscence",
+        
+        "tracks": {
+            "reminiscence": {
+                "audioSrc": "/music/Reminiscence/Reminiscence.mp3",
+                
+                "title": "Reminiscence",
+                "artist": "Lynx",
+                "year": 2025,
+                "genre": "Rock",
+                
+                "imgSrc": "/images/MusicCovers/Placeholder.png",
+                "imgCaption": "Caption",
+                
+                "trackInfo": 
+                    "My longest track!"
+
+            }
+        }
+    },
+
+    "shilohService": {
+        
+        "albumCover": "/images/MusicCovers/Placeholder.png",
+        "albumTitle": "Shiloh Service OST",
+        "albumArtist": "Lynx",
+        "albumYear": 2025,
+        "albumGenre": "OST",
+        "albumInfo": "OST made for \"Shiloh Service,\" a friend's Student Swift Challenge submission.",
+        
+        "musicSlug": "shiloh-service",
+        
+        "tracks": {
+            "bedroom": {
+                "audioSrc": "/music/ShilohService/BedroomTheme.mp3",
+                
+                "title": "Bedroom Theme",
+                "artist": "Lynx",
+                "year": 2025,
+                "genre": "OST",
+                
+                "imgSrc": "/images/MusicCovers/Placeholder.png",
+                "imgCaption": "Caption",
+                
+                "trackInfo": 
+                    "Track Info"
+
+            },
+
+            "garden": {
+                "audioSrc": "/music/ShilohService/GardenTheme.mp3",
+                
+                "title": "Garden Theme",
+                "artist": "Lynx",
+                "year": 2025,
+                "genre": "OST",
+                
+                "imgSrc": "/images/MusicCovers/Placeholder.png",
+                "imgCaption": "Caption",
+                
+                "trackInfo": 
+                    "Track Info"
+
+            },
+
+            "menu": {
+                "audioSrc": "/music/ShilohService/MenuTheme.mp3",
+                
+                "title": "Menu Theme",
+                "artist": "Lynx",
+                "year": 2025,
+                "genre": "OST",
+                
+                "imgSrc": "/images/MusicCovers/Placeholder.png",
+                "imgCaption": "Caption",
+                
+                "trackInfo": 
+                    "Track Info"
+
+            },
+
+            "minigame": {
+                "audioSrc": "/music/ShilohService/MinigameTheme.mp3",
+                
+                "title": "Minigame Theme",
+                "artist": "Lynx",
+                "year": 2025,
+                "genre": "OST",
+                
+                "imgSrc": "/images/MusicCovers/Placeholder.png",
+                "imgCaption": "Caption",
+                
+                "trackInfo": 
+                    "Track Info"
+
+            },
+
+            "minigameIntro": {
+                "audioSrc": "/music/ShilohService/MinigameIntro.mp3",
+                
+                "title": "Minigame Intro",
+                "artist": "Lynx",
+                "year": 2025,
+                "genre": "OST",
+                
+                "imgSrc": "/images/MusicCovers/Placeholder.png",
+                "imgCaption": "Caption",
+                
+                "trackInfo": 
+                    "Track Info"
+
+            },
+
+            "minigameOutro": {
+                "audioSrc": "/music/ShilohService/MinigameOutro.mp3",
+                
+                "title": "Minigame Outro",
+                "artist": "Lynx",
+                "year": 2025,
+                "genre": "OST",
+                
+                "imgSrc": "/images/MusicCovers/Placeholder.png",
+                "imgCaption": "Caption",
+                
+                "trackInfo": 
+                    "Track Info"
+
+            }
+        }
     }
+
+
 }

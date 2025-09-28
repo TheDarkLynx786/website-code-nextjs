@@ -18,7 +18,7 @@ export default function MusicDisplay() {
     const album_list = Object.keys(musicInfo);
 
     // By-year sorting
-    album_list.sort( (a, b) => musicInfo[a].albumYear - musicInfo[b].albumYear);
+    album_list.sort( (a, b) => musicInfo[b].albumYear - musicInfo[a].albumYear);
 
     // Page Check for page-specific rendering
 
