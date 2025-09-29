@@ -1,20 +1,19 @@
 import styles from "@/styles/music.module.css";
 import MusicDisplay from "@/_components/musicDisplay.js";
 import HeroMusic from "@/_components/heroMusic";
-import { getRandomTrackWaveform } from "@/_lib/randomMusic";
+import { getRandomTrack } from "@/_lib/randomMusic";
 
-export default async function MusicMain() {
+export default function MusicMain() {
 
-  const peaksPerChannel = await getRandomTrackWaveform();
-
-  console.log(peaksPerChannel);
+  const track = getRandomTrack();
+  console.log(track.file)
   
   return (
     <>
-      <HeroMusic track={peaksPerChannel} />
+      <HeroMusic track={track} />
       <div className={styles.mainPage}>
         
-        <MusicDisplay track={peaksPerChannel} />
+        <MusicDisplay track={track} />
       </div>
     </>
   );

@@ -82,6 +82,7 @@ function imagePerspective() {
 
 export default function Hero({track}) {
     const text = hoverText();
+    const cur_track = track.file.split("\/").pop().split(".")[0];
     const image = imagePerspective();
 
     return(
@@ -90,7 +91,7 @@ export default function Hero({track}) {
                 <Card cardStyle={`${cardStyles.card} ${styles.heroCard}`} wrapperStyle={styles.heroWrapper}>
                     <div className={styles.textButtonDiv}>
                             <h1 className={styles.heroTextTitle}>
-                                Contact Me!
+                                Now playing "{cur_track}"
                             </h1>
                             
                             <div>    

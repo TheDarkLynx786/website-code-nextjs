@@ -41,8 +41,6 @@ export default function MusicDisplay() {
 
     const albumCards = album_list.map( (album_iter) => {
 
-        console.log(album_iter);
-
         const album = musicInfo[album_iter]
 
         const albumName = album["albumTitle"];
@@ -54,7 +52,6 @@ export default function MusicDisplay() {
 
         const key = albumName + albumYear;
 
-        console.log(album);
         
         // Year Format
         const date =
