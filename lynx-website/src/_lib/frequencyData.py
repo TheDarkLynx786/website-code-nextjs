@@ -41,6 +41,9 @@ for dir in os.listdir(musicPath):
             # Transpose to get time slices as rows (array of arrays of frequency snapshots for each file)
             frames = S_db.T.tolist()
 
+            # Downsize frames for size
+            frames = frames[::5]
+
             # Normalize the data to be on a 0-255 scale from -80 to 0
             normalized_frames = []
             for frame in frames:

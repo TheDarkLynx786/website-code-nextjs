@@ -49,8 +49,8 @@ const MusicCanvas = ({ track, children }) => {
 
     // Throttle settings: how often to pick a new snapshot (updates per second)
     const bpm = track.tempo || fallbackBpm || 120;
-    const subdivisions = 4; // 4 updates per beat
-    let updatesPerSecond = (bpm * 8 / 60) * subdivisions;
+    const subdivisions = 2; // 4 updates per beat
+    let updatesPerSecond = (bpm * 2 / 60) * subdivisions;
     const updateInterval = 1000 / updatesPerSecond;
     let lastUpdateTime = 0;
 
