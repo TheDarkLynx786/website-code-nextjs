@@ -42,7 +42,7 @@ export default async function Contact() {
               <p className={styles.contactInputTitles}>
                 Have any favorite music? 
                 <br /><br />
-                Drop the name and artist and I'll give it a listen:
+                Drop the name and artist and I&apos;ll give it a listen:
               </p>   
               <input className={styles.contactInput} type="text" name="music" placeholder="(Optional) Your Favorite Music [Name - Artist-Name]"/>
           </div>
