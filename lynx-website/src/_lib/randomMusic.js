@@ -9,6 +9,7 @@ export function getRandomTrack() {
 
     return {
         file: frequencyData[musicFile]["filePath"],
+        tempo: frequencyData[musicFile]["tempo"],
         freqData: frequencyData[musicFile]["freqData"]
     };
 }

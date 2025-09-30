@@ -2,6 +2,7 @@
 # This will NOT run during runtime, it's just a JSON file generator
 
 import librosa
+from librosa.beat import beat_track
 import os
 import numpy as np
 import json
@@ -10,13 +11,13 @@ import json
 
 musicPath = "../../public/music"
 
+entries = []
+
 for dir in os.listdir(musicPath):
     
     print(dir)
 
     dirPath = os.path.join(musicPath, dir)
-
-    entries = []
 
     if os.path.isdir(dirPath):
 
@@ -33,6 +34,10 @@ for dir in os.listdir(musicPath):
             # Convert to decibels for dynamic range
             S_db = librosa.amplitude_to_db(S, ref=np.max)
 
+            # Tempo
+            tempo, _ = librosa.beat.beat_track(y=y, sr=sr)
+            tempo = tempo[0]
+
             # Transpose to get time slices as rows (array of arrays of frequency snapshots for each file)
             frames = S_db.T.tolist()
 
@@ -45,15 +50,23 @@ for dir in os.listdir(musicPath):
 
             fileEntry = {
                 "filePath": fp,
+                "tempo": tempo,
                 "freqData": normalized_frames
             }
 
             entries.append(fileEntry)
+
+for item in entries:
+    print(item["filePath"])
+    print(item["tempo"])
         
 
 # Save to JSON
+print("\nCreating JSON entries... (this will take a sec)\n")
 with open("../_content/frequencyData.json", 'w') as f:
     json.dump(entries, f)
+
+print("Enjoy your terrible databasing method! (reminder that this has NO scalability)")
 
 
 

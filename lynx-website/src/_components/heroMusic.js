@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "@/styles/heroContact.module.css"
+import styles from "@/styles/heroMusic.module.css"
 import cardStyles from "@/styles/card.module.css"
 import Card from "./card";
 import MusicCanvas from "@/_components/musicCanvas";
@@ -71,7 +71,7 @@ function imagePerspective() {
             ref = {imgRef}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            src="/images/contact/YouGotMail.png"
+            src="/images/MusicCovers/Placeholder.png"
             alt="Hero Image"
             width={300}
             height={300}
@@ -90,15 +90,24 @@ export default function Hero({track}) {
             <MusicCanvas track={track} >
                 <Card cardStyle={`${cardStyles.card} ${styles.heroCard}`} wrapperStyle={styles.heroWrapper}>
                     <div className={styles.textButtonDiv}>
-                            <h1 className={styles.heroTextTitle}>
-                                Now playing "{cur_track}"
-                            </h1>
-                            
+                            <div>
+                                <h1 className={styles.heroTextTitle}>
+                                    The Best of
+                                </h1>
+                                <h1 className={styles.heroTextLynx}>
+                                    "Lynx"
+                                </h1>
+                            </div>
+
                             <div>    
                                 <h2 className={styles.heroTextSubtitle}>
-                                    Need to talk? 
+                                    I compose music!
+                                    <br/>
+                                    Come listen to some of my tracks!
                                     <br/><br/>
-                                    Enter in your stuff below, and I'll get back to you in some time!
+                                    The visualizer plays: 
+                                    <br/>
+                                    "{cur_track}"
                                 </h2>
                             </div>
                     </div>    
