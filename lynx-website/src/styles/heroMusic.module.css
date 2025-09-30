@@ -1,8 +1,3 @@
-:root {
-    --degreeX: 10deg;
-    --degreeY: 10deg;
-}
-
 .heroContainer {
     display: flex;
     flex-direction: column;
@@ -10,6 +5,9 @@
     justify-content: center;
     height: 400px;
     background-color: #f0f0f0;
+    
+    --degreeX: 10deg;
+    --degreeY: 10deg;
 }
 
 .heroButton {
