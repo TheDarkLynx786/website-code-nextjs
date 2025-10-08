@@ -1,10 +1,75 @@
-.div {
+.socialDiv {
     display: flex;
     justify-content: center;
+    padding: 15px;
+    gap: 25px;
+}
+
+.webringDiv {
+    display: grid;
+    grid-template-columns: repeat(3, 7.8rem);
+    max-width: auto;
+    justify-content: center;
+    place-items: center;
+    gap: 1rem;
+    align-items: center;
+}
+
+.webringLogo {
+    transform: scale(1,1);
+    transition: transform 0.1s ease-in-out;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #0d0056;
+}
+
+.webringButtonDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    gap: 0.2rem;
+
+    font-size: 1rem;
+    font-family: "DejaVu Sans Mono", monospace;
+    color: #000000;
+    text-align: center;
+}
+
+.webringLogo:hover {
+    transform: scale(1.1,1.1);
+    transition: transform 0.1s ease-in-out;
+}
+
+.webringText {
+    font-size: 1.5rem;
+    font-family: "DejaVu Sans Mono", monospace;
+    color: #000000;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+
+    background-color: #bcb9b9;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.webringText:hover {
+    background-color: #9b9999;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.textDiv {
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .divText {
     font-size: 1.2rem;
+    font-family: "DejaVu Sans Mono", monospace;
     color: #000000;
     text-align: center;
 }
@@ -21,14 +86,14 @@
 }
 
 .socialIcon {
-    width: 50px;
     fill: #2e2828;
     
     height: 50px;
+    width: 50px;
+
     padding: 5px;
     border-radius: 10px;
     border: 2px solid;
-    margin: 15px;
     
     transform: scale(1,1);
     background-color: #bcb9b9;
@@ -46,9 +111,12 @@
 }
 
 .footer {
-    height: 8rem;
+    height: auto;
     grid-row-start: 3;
+    gap: 0.3rem;
     display: grid;
+    align-items: center;
+    justify-content: center;
     background-color: #bcb9b9;
     z-index: 1000;
 }
