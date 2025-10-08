@@ -59,7 +59,7 @@
     font-size: 2rem;
     font-family: "DejaVu Sans Mono", monospace;
     color: #000;
-    text-align: left;
+    text-align: center;
 
 }
 
@@ -99,4 +99,38 @@
     font-size: 0.9rem;
     color: #484747;
     text-align: left;
+}
+
+@media (max-width: 1300px) {
+    .musicDisplay {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        justify-content: center;
+        gap: 1rem;
+        padding: 20px;
+
+        width: 100%;
+    }
+}
+
+@media (max-width: 875px) {
+    .musicDisplay {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); 
+        justify-content: center;
+        gap: 1rem;
+        padding: 20px;
+
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .musicDisplayWrapper {
+        width: 80%;
+    }
+
+    .musicDisplayCard {
+        width: 18rem;
+    }
 }
